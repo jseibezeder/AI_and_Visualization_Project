@@ -1,13 +1,32 @@
 {
-    "team_name": "Team Name",
+    "team_name": "Los plotos hermanos",
     "students": [
         {
-            "student_id": "k00000000",
-            "first_name": "First",
-            "last_name": "Last",
-            "email": "first.last@mail.com",
+            "student_id": "k12105472",
+            "first_name": "Theresa",
+            "last_name": "König",
+            "email": "k12105472@students.jku.at",
             "github_user": "mygitusername"
         },
-        // ...add a record for each student
+        {
+            "student_id": "k12219271",
+            "first_name": "Viktor",
+            "last_name": "Szolga",
+            "email": "k12219271@students.jku.at",
+            "github_user": "mygitusername"
+        },{
+            "student_id": "k12215223",
+            "first_name": "Tobias",
+            "last_name": "Halmdienst",
+            "email": "k12215223@students.jku.at",
+            "github_user": "mygitusername"
+        },{
+            "student_id": "k12208532",
+            "first_name": "Jakob",
+            "last_name": "Seibezeder",
+            "email": "k12208532@students.jku.at",
+            "github_user": "jseibezeder"
+        },
+        
     ]
 }

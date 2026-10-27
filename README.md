@@ -83,7 +83,7 @@ be treated as reproduced on this checkout.
 ## Collaboration
 
 The initial assets are set up directly on `main` for this setup only. Subsequent
-work should use branches, including `HeuVi` and `TheJak`, with changes merged
+work should use branches, including `HeuVik` and `TheJak`, with changes merged
 back through pull requests.
 
 ## Sources and licenses

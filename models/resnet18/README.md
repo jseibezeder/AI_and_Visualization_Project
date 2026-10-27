@@ -47,4 +47,3 @@ not replace the checkpoint's CC BY 4.0 license.
 
 The archive member was extracted using HTTP ranges and its ZIP CRC was checked;
 other models and the full 1.46 GB archive are deliberately not included.
-SHA-256 and source details are in [`../../assets.json`](../../assets.json).

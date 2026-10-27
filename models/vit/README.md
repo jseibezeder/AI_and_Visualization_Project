@@ -42,5 +42,4 @@ preprocessing or the original MedMNIST resolution; using our 28 x 28 archive
 upsampled to 224 x 224 is supported, but does not establish reproduction of
 that metric or a like-for-like benchmark against the CNN.
 
-SHA-256 and source URLs are in [`../../assets.json`](../../assets.json).
 For research/teaching only, not clinical use.

@@ -38,7 +38,6 @@ with np.load("data/bloodmnist.npz", allow_pickle=False) as dataset:
 ```
 
 Upstream MD5: `7053d0359d879ad8a5505303e11de1dc`.
-SHA-256 and source URLs are recorded in [`../assets.json`](../assets.json).
 
 ## Attribution and license
 

@@ -24,9 +24,6 @@ models/
     preprocessor_config.json
     UPSTREAM_README.md
     README.md, LICENSE
-scripts/
-  verify_assets.py           # Checksums, dataset structure, optional inference
-assets.json                  # Source revisions, licenses, sizes and SHA-256 hashes
 requirements.txt
 ```
 
@@ -51,18 +48,16 @@ source .venv/bin/activate
 .venv\Scripts\Activate.ps1
 ```
 
-Then install and verify from the repository root:
+Then install the dependencies from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/verify_assets.py
-python scripts/verify_assets.py --smoke
 ```
 
 Use Python 3.10+ with a supported PyTorch build. For GPU acceleration, install
 the appropriate [PyTorch build](https://pytorch.org/get-started/locally/) for
-your platform. The smoke check runs a small CPU inference batch through both
-models using local files only; no training or additional model downloads occur.
+your platform. Loading and preprocessing examples for both models are linked
+below; they use local files without additional model downloads.
 
 Both checkpoints use **Git LFS** because the ViT exceeds GitHub's 100 MiB normal
 Git file limit. The dataset is ordinary Git data. A full checkout downloads

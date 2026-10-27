@@ -1,0 +1,87 @@
+{
+  "description": "Unmodified upstream assets. SHA-256 hashes verify the files in this repository.",
+  "sources": {
+    "dataset": "https://zenodo.org/records/10519652",
+    "cnn_weights": "https://zenodo.org/records/7782114",
+    "cnn_code": {
+      "repository": "https://github.com/MedMNIST/experiments",
+      "revision": "70b6b3a7ad7afddff1df2a3b735235830fbdb142"
+    },
+    "vit": {
+      "repository": "https://huggingface.co/KiViDrag/ViT_bloodmnist_std_15",
+      "revision": "8e5f52d1316b936012909bfac13bc8e3d6429a2b"
+    }
+  },
+  "notes": [
+    "CNN extracted using HTTP ranges; ZIP member CRC verified. Full 1.46 GB archive was not downloaded, so its published MD5 was recorded but not verified."
+  ],
+  "files": [
+    {
+      "path": "data/bloodmnist.npz",
+      "bytes": 35461855,
+      "sha256": "062023e186f537e26b3c21ea3b2614ddfc475e8a14825dfd20663bbb7e37bddc",
+      "source_url": "https://zenodo.org/api/records/10519652/files/bloodmnist.npz/content",
+      "license": "CC-BY-4.0",
+      "md5": "7053d0359d879ad8a5505303e11de1dc"
+    },
+    {
+      "path": "models/resnet18/LICENSE",
+      "bytes": 11344,
+      "sha256": "196f8c8626129addd1a8a9670ee2b15002b662ee0b06ffa3616866960e480062",
+      "source_url": "https://raw.githubusercontent.com/MedMNIST/experiments/70b6b3a7ad7afddff1df2a3b735235830fbdb142/LICENSE",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/resnet18/models.py",
+      "bytes": 4086,
+      "sha256": "db0a8cb6f9d2a50dec1e57bacb41469980c519cac3afd4387420e69a292fad47",
+      "source_url": "https://raw.githubusercontent.com/MedMNIST/experiments/70b6b3a7ad7afddff1df2a3b735235830fbdb142/MedMNIST2D/models.py",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/resnet18/resnet18_28_1.pth",
+      "bytes": 44750211,
+      "sha256": "d1fe55082ca191d5efc1ea20cc042a606598bf88b8911598b9ba1a9e30cae99b",
+      "source_url": "https://zenodo.org/api/records/7782114/files/weights_bloodmnist.zip/content",
+      "archive_member": "resnet18_28_1.pth",
+      "archive_md5": "e49ce8a3502481309eb21f193d8c2f77",
+      "zip_crc32": "f543a08b",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "models/vit/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "source_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/vit/UPSTREAM_README.md",
+      "bytes": 5427,
+      "sha256": "9032d557e5b182823db426d996b0f2bb9726f39325d5839c1682768fc7a2aa4b",
+      "source_url": "https://huggingface.co/KiViDrag/ViT_bloodmnist_std_15/resolve/8e5f52d1316b936012909bfac13bc8e3d6429a2b/README.md",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/vit/config.json",
+      "bytes": 1123,
+      "sha256": "1c9c254a32b7ded952ce66b80f51525ccef3760e721cacee72e4357d37aa2832",
+      "source_url": "https://huggingface.co/KiViDrag/ViT_bloodmnist_std_15/resolve/8e5f52d1316b936012909bfac13bc8e3d6429a2b/config.json",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/vit/model.safetensors",
+      "bytes": 343242432,
+      "sha256": "d89afc010d716e3d901590bd1005c46955cce17d2ecf5dbe81ed8b4c0c1eaafd",
+      "source_url": "https://huggingface.co/KiViDrag/ViT_bloodmnist_std_15/resolve/8e5f52d1316b936012909bfac13bc8e3d6429a2b/model.safetensors",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "models/vit/preprocessor_config.json",
+      "bytes": 325,
+      "sha256": "a34861a24e781942424ad790b82bc99348404a2e64ea882de88c40905851698d",
+      "source_url": "https://huggingface.co/KiViDrag/ViT_bloodmnist_std_15/resolve/8e5f52d1316b936012909bfac13bc8e3d6429a2b/preprocessor_config.json",
+      "license": "Apache-2.0"
+    }
+  ]
+}

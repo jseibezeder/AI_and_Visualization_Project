@@ -1,0 +1,13 @@
+BloodMNIST dataset
+
+Copyright / attribution: Jiancheng Yang, Rui Shi, Donglai Wei, Zequan Liu,
+Lin Zhao, Bilian Ke, Hanspeter Pfister, and Bingbing Ni (MedMNIST team).
+Source: https://zenodo.org/records/10519652
+
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Full legal terms: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The bloodmnist.npz archive in this directory is redistributed without changes.
+When sharing or adapting it, retain attribution, link the license, and indicate
+any changes, as required by the license. See README.md for publication details.

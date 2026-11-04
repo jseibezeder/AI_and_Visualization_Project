@@ -4,3 +4,5 @@ transformers>=4.45,<5
 Pillow>=10,<13
 safetensors>=0.4,<1
 matplotlib>=3.9,<4
+plotly>=7.1,<8
+nbformat>=4.2,<6

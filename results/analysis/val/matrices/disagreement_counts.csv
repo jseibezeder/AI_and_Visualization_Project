@@ -1,0 +1,9 @@
+resnet_prediction / vit_prediction,basophil,eosinophil,erythroblast,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",lymphocyte,monocyte,neutrophil,platelet
+basophil,116,0,0,9,1,2,0,0
+eosinophil,0,311,0,0,0,0,1,0
+erythroblast,0,0,147,5,0,0,1,0
+"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",3,0,2,248,2,11,6,0
+lymphocyte,0,0,2,3,121,0,0,0
+monocyte,0,0,0,10,1,138,0,0
+neutrophil,0,0,0,9,1,0,325,0
+platelet,0,0,1,0,0,0,1,235

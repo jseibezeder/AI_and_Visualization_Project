@@ -1,0 +1,19 @@
+{
+  "protocol_signature": "787ca747a7709f6962023c7a2f8be07b45aafbee55fa93da9f5a5f9f40471e2e",
+  "n_images": 48,
+  "per_true_class": 6,
+  "disagreement_images": 16,
+  "occlusions_per_image_per_model": 169,
+  "total_intervention_evaluations": 16224,
+  "extra_audit_evaluations": 48,
+  "baseline": "Reused from preds/; only a small reproducibility audit is rerun",
+  "global_color_scale": [
+    -0.9684211611747742,
+    0.9684211611747742
+  ],
+  "blur_sigma_pixels": 2.0,
+  "importance": "baseline p(target) - occluded p(target)",
+  "map_coordinates": "13x13 row-major patch positions, not a per-pixel attribution map",
+  "selection_bias": "Balanced six/class, enriched for disagreements; descriptive examples, not a population estimate",
+  "limitations": "Artificial intervention sensitivity only; does not establish recognition of biological structures. Blur method, sigma, and interpolation affect maps."
+}

@@ -1,0 +1,5 @@
+{
+  "protocol_signature": "1c909377cfb564da629299a867e3e91dfc2007c60ea3121a5d39e38641599e90",
+  "status": "approved_via_cli",
+  "instructions": "Review PNGs for recognizable cell morphology. To change levels, edit config.json and rerun pilot before inference. Explicit --approve-pilot acknowledges this review; the code cannot establish label preservation."
+}

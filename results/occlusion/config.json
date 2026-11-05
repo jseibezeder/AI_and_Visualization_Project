@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "split": "test",
+  "per_class": 6,
+  "seed": 43,
+  "patch_size": 4,
+  "stride": 2,
+  "blur_sigma_pixels": 2.0,
+  "selection": "Up to two model-disagreement images per class, remaining slots sampled uniformly without replacement from that class"
+}

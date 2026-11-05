@@ -1,0 +1,27 @@
+{
+  "device": "mps",
+  "torch_version": "2.1.2",
+  "evaluation_mode": true,
+  "deterministic_algorithms": true,
+  "deterministic_warn_only": true,
+  "seed": 42,
+  "audit_sample_indices": [
+    244,
+    9,
+    96,
+    74,
+    93,
+    37,
+    39,
+    42
+  ],
+  "repeats": 3,
+  "max_probability_range_across_repeats": 0.0,
+  "prediction_changes_across_repeats": 0,
+  "max_abs_difference_from_cached_baseline": 1.7881393432617188e-07,
+  "scope": "Audit covers eight baseline images, not every transformed image; no cross-device bitwise guarantee.",
+  "warnings": [
+    "TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()"
+  ],
+  "elapsed_seconds": 50.83758183300961
+}

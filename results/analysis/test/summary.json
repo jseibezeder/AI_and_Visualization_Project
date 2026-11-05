@@ -1,0 +1,43 @@
+{
+  "split": "test",
+  "n_images": 3421,
+  "class_names": [
+    "basophil",
+    "eosinophil",
+    "erythroblast",
+    "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",
+    "lymphocyte",
+    "monocyte",
+    "neutrophil",
+    "platelet"
+  ],
+  "resnet_accuracy": 0.957907044723765,
+  "vit_accuracy": 0.9698918444899153,
+  "groups": {
+    "both_correct": {
+      "count": 3224,
+      "proportion": 0.9424144986845951
+    },
+    "only_resnet_correct": {
+      "count": 53,
+      "proportion": 0.015492546039169833
+    },
+    "only_vit_correct": {
+      "count": 94,
+      "proportion": 0.02747734580532008
+    },
+    "both_incorrect": {
+      "count": 50,
+      "proportion": 0.014615609470914937
+    }
+  },
+  "same_prediction_count": 3264,
+  "different_prediction_count": 157,
+  "same_class_substantial_count": 80,
+  "js_threshold_bits": 0.1,
+  "js_definition": "0.5*KL_base2(p || (p+q)/2) + 0.5*KL_base2(q || (p+q)/2)",
+  "matrix_orientation": "rows=ResNet prediction; columns=ViT prediction",
+  "matrix_proportions_denominator": 3421,
+  "prediction_directory": "/Users/master/AI_and_Visualization_Project_clean/preds",
+  "dataset": "/Users/master/AI_and_Visualization_Project_clean/data/bloodmnist.npz"
+}

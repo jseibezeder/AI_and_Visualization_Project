@@ -1,0 +1,17 @@
+transformation,sample_index,max_probability_drop,selection_rule
+rotation,286,1.0,largest original-decision probability drop; noise realization 0
+rotation,1142,1.0,largest original-decision probability drop; noise realization 0
+translation,261,0.9999998211860657,largest original-decision probability drop; noise realization 0
+translation,2795,0.9999997615814209,largest original-decision probability drop; noise realization 0
+brightness,81,1.0,largest original-decision probability drop; noise realization 0
+brightness,261,1.0,largest original-decision probability drop; noise realization 0
+blur,126,1.0,largest original-decision probability drop; noise realization 0
+blur,292,1.0,largest original-decision probability drop; noise realization 0
+noise,2925,0.9999994039535522,largest original-decision probability drop; noise realization 0
+noise,1529,0.9999983906745911,largest original-decision probability drop; noise realization 0
+red_scale,1782,1.0,largest original-decision probability drop; noise realization 0
+red_scale,2137,1.0,largest original-decision probability drop; noise realization 0
+green_scale,2925,0.9999993443489075,largest original-decision probability drop; noise realization 0
+green_scale,3140,0.9999921917915344,largest original-decision probability drop; noise realization 0
+blue_scale,2561,0.9999996423721313,largest original-decision probability drop; noise realization 0
+blue_scale,539,0.9999992251396179,largest original-decision probability drop; noise realization 0

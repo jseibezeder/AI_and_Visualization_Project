@@ -1,0 +1,30 @@
+{
+  "resnet": {
+    "train": {
+      "n_samples": 11959,
+      "accuracy": 1.0
+    },
+    "val": {
+      "n_samples": 1712,
+      "accuracy": 0.9655373831775701
+    },
+    "test": {
+      "n_samples": 3421,
+      "accuracy": 0.957907044723765
+    }
+  },
+  "vit": {
+    "train": {
+      "n_samples": 11959,
+      "accuracy": 0.99481562003512
+    },
+    "val": {
+      "n_samples": 1712,
+      "accuracy": 0.977803738317757
+    },
+    "test": {
+      "n_samples": 3421,
+      "accuracy": 0.9698918444899153
+    }
+  }
+}

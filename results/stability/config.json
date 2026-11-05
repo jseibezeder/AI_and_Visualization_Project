@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "split": "test",
+  "per_class": 40,
+  "seed": 42,
+  "noise_realizations": 3,
+  "levels": {
+    "rotation": [
+      -20,
+      -10,
+      -5,
+      5,
+      10,
+      20
+    ],
+    "translation": [
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3
+    ],
+    "brightness": [
+      0.8,
+      0.9,
+      1.1,
+      1.2
+    ],
+    "blur": [
+      0.3,
+      0.6,
+      1.0,
+      1.5
+    ],
+    "noise": [
+      0.01,
+      0.025,
+      0.05,
+      0.1
+    ],
+    "red_scale": [
+      0.9,
+      1.1
+    ],
+    "green_scale": [
+      0.9,
+      1.1
+    ],
+    "blue_scale": [
+      0.9,
+      1.1
+    ]
+  },
+  "border_fill_rgb": [
+    128,
+    128,
+    128
+  ],
+  "note": "Edit levels after visual pilot, before running inference. New config requires a new output directory."
+}

@@ -1,0 +1,26 @@
+{
+  "device": "mps",
+  "torch_version": "2.1.2",
+  "evaluation_mode": true,
+  "deterministic_algorithms": true,
+  "deterministic_warn_only": true,
+  "seed": 43,
+  "preprocessing": "RGB 28x28, /255, mean/std=0.5",
+  "audit_sample_indices": [
+    65,
+    873,
+    118,
+    48,
+    1213,
+    50,
+    194,
+    447
+  ],
+  "audit_repeats": 3,
+  "max_probability_range_across_repeats": 0.0,
+  "max_abs_difference_from_cached_baseline": 1.7881393432617188e-07,
+  "audit_prediction_changes": 0,
+  "audit_scope": "Eight baseline images only; not a cross-device determinism guarantee",
+  "warnings": [],
+  "elapsed_seconds": 44.14268183405511
+}

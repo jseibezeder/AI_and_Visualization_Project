@@ -1,0 +1,13 @@
+{
+  "protocol_signature": "1c909377cfb564da629299a867e3e91dfc2007c60ea3121a5d39e38641599e90",
+  "n_images": 320,
+  "initially_both_correct_n": 301,
+  "baseline_accuracy": {
+    "resnet": 0.959375,
+    "vit": 0.965625
+  },
+  "n_conditions": 38,
+  "n_transformations": 8,
+  "interpretation": "Stability is not correctness; changes are not guaranteed label preserving. No architecture superiority is assumed.",
+  "fingerprint_aggregation": "Mean probability change from cached baseline; average noise repeats per image, then levels equally; group by true class."
+}

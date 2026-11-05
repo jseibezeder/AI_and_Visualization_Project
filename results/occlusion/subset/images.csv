@@ -1,0 +1,49 @@
+sample_index,true_label,true_class,resnet_prediction,vit_prediction
+48,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",3,3
+50,5,monocyte,5,4
+65,0,basophil,3,0
+105,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",5,3
+118,2,erythroblast,7,2
+164,0,basophil,0,0
+194,6,neutrophil,6,6
+432,5,monocyte,3,3
+447,7,platelet,7,7
+454,5,monocyte,5,5
+689,2,erythroblast,2,2
+809,6,neutrophil,3,6
+873,1,eosinophil,3,1
+881,1,eosinophil,1,1
+906,1,eosinophil,3,3
+952,0,basophil,1,3
+1013,2,erythroblast,2,2
+1023,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",3,3
+1151,7,platelet,7,7
+1213,4,lymphocyte,5,4
+1314,1,eosinophil,1,1
+1416,0,basophil,3,0
+1460,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",5,3
+1680,1,eosinophil,6,1
+1731,7,platelet,7,7
+1758,7,platelet,7,7
+1819,0,basophil,5,0
+1859,6,neutrophil,6,6
+1863,0,basophil,0,0
+1885,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",3,3
+2034,6,neutrophil,6,6
+2055,4,lymphocyte,4,4
+2179,7,platelet,7,7
+2241,6,neutrophil,6,6
+2493,4,lymphocyte,4,4
+2494,5,monocyte,5,5
+2589,1,eosinophil,1,1
+2628,2,erythroblast,2,2
+2698,7,platelet,7,7
+2835,6,neutrophil,6,3
+2878,5,monocyte,5,5
+2922,2,erythroblast,2,2
+3035,4,lymphocyte,5,4
+3203,4,lymphocyte,4,4
+3220,2,erythroblast,2,4
+3247,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",3,3
+3283,5,monocyte,3,5
+3364,4,lymphocyte,4,4

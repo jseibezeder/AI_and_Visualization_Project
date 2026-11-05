@@ -1,0 +1,42 @@
+{
+  "model": "resnet",
+  "checkpoint": "models/resnet18/resnet18_28_1.pth",
+  "dataset": "data/bloodmnist.npz",
+  "class_names": [
+    "basophil",
+    "eosinophil",
+    "erythroblast",
+    "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",
+    "lymphocyte",
+    "monocyte",
+    "neutrophil",
+    "platelet"
+  ],
+  "source_resolution": [
+    28,
+    28
+  ],
+  "model_input_resolution": [
+    28,
+    28
+  ],
+  "sample_order": "original archive order; sample_index is split-local and zero-based",
+  "smoke_test": false,
+  "device": "mps",
+  "torch_version": "2.1.2",
+  "metrics": {
+    "train": {
+      "n_samples": 11959,
+      "accuracy": 1.0
+    },
+    "val": {
+      "n_samples": 1712,
+      "accuracy": 0.9655373831775701
+    },
+    "test": {
+      "n_samples": 3421,
+      "accuracy": 0.957907044723765
+    }
+  },
+  "elapsed_seconds": 10.549816915998235
+}

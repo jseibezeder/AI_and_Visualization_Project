@@ -1,0 +1,1 @@
+sample_index,split,true_label,true_class,resnet_prediction,resnet_class,vit_prediction,vit_class,resnet_confidence,vit_confidence,group,same_prediction,js_divergence_bits,resnet_prob_0,resnet_prob_1,resnet_prob_2,resnet_prob_3,resnet_prob_4,resnet_prob_5,resnet_prob_6,resnet_prob_7,vit_prob_0,vit_prob_1,vit_prob_2,vit_prob_3,vit_prob_4,vit_prob_5,vit_prob_6,vit_prob_7

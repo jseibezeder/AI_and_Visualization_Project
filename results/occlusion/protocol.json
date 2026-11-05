@@ -1,0 +1,20 @@
+{
+  "signature": "787ca747a7709f6962023c7a2f8be07b45aafbee55fa93da9f5a5f9f40471e2e",
+  "config": {
+    "schema_version": 1,
+    "split": "test",
+    "per_class": 6,
+    "seed": 43,
+    "patch_size": 4,
+    "stride": 2,
+    "blur_sigma_pixels": 2.0,
+    "selection": "Up to two model-disagreement images per class, remaining slots sampled uniformly without replacement from that class"
+  },
+  "asset_sha256": {
+    "models/resnet18/resnet18_28_1.pth": "d1fe55082ca191d5efc1ea20cc042a606598bf88b8911598b9ba1a9e30cae99b",
+    "models/resnet18/models.py": "db0a8cb6f9d2a50dec1e57bacb41469980c519cac3afd4387420e69a292fad47",
+    "models/vit/model.safetensors": "d89afc010d716e3d901590bd1005c46955cce17d2ecf5dbe81ed8b4c0c1eaafd",
+    "models/vit/config.json": "1c9c254a32b7ded952ce66b80f51525ccef3760e721cacee72e4357d37aa2832",
+    "models/vit/preprocessor_config.json": "a34861a24e781942424ad790b82bc99348404a2e64ea882de88c40905851698d"
+  }
+}

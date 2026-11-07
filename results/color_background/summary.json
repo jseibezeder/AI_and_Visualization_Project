@@ -1,0 +1,383 @@
+{
+  "protocol_signature": "254d2b8e25c090b511fa0ab11325a2fcf016bd4346515b26786d8a806a3aba69",
+  "color_images": 48,
+  "region_images": 16,
+  "color_conditions_including_original": 14,
+  "mild_one_model_only_flip_cases": 106,
+  "mild_one_model_only_flip_images": 31,
+  "color_results": [
+    {
+      "model": "resnet",
+      "transformation": "original",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 0,
+      "flip_fraction": 0.0,
+      "mean_probability_change": 0.0,
+      "accuracy": 0.6875
+    },
+    {
+      "model": "resnet",
+      "transformation": "grayscale",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 43,
+      "flip_fraction": 0.8958333333333334,
+      "mean_probability_change": -0.8456995772818724,
+      "accuracy": 0.125
+    },
+    {
+      "model": "resnet",
+      "transformation": "saturation_0.5",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 37,
+      "flip_fraction": 0.7708333333333334,
+      "mean_probability_change": -0.7218408100306988,
+      "accuracy": 0.25
+    },
+    {
+      "model": "resnet",
+      "transformation": "saturation_0.8",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 16,
+      "flip_fraction": 0.3333333333333333,
+      "mean_probability_change": -0.2903452304502328,
+      "accuracy": 0.6458333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "saturation_1.2",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 10,
+      "flip_fraction": 0.20833333333333334,
+      "mean_probability_change": -0.15061867299179235,
+      "accuracy": 0.6875
+    },
+    {
+      "model": "resnet",
+      "transformation": "saturation_1.5",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 25,
+      "flip_fraction": 0.5208333333333334,
+      "mean_probability_change": -0.4582291456560294,
+      "accuracy": 0.4375
+    },
+    {
+      "model": "resnet",
+      "transformation": "red_scale_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 8,
+      "flip_fraction": 0.16666666666666666,
+      "mean_probability_change": -0.15885810181498528,
+      "accuracy": 0.6458333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "red_scale_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 15,
+      "flip_fraction": 0.3125,
+      "mean_probability_change": -0.2408576849848032,
+      "accuracy": 0.6458333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "blue_scale_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 8,
+      "flip_fraction": 0.16666666666666666,
+      "mean_probability_change": -0.1214769221842289,
+      "accuracy": 0.7083333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "blue_scale_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 2,
+      "flip_fraction": 0.041666666666666664,
+      "mean_probability_change": -0.02617730696996053,
+      "accuracy": 0.6875
+    },
+    {
+      "model": "resnet",
+      "transformation": "brightness_0.9",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 13,
+      "flip_fraction": 0.2708333333333333,
+      "mean_probability_change": -0.22340422372023264,
+      "accuracy": 0.6458333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "brightness_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 11,
+      "flip_fraction": 0.22916666666666666,
+      "mean_probability_change": -0.17112321654955545,
+      "accuracy": 0.6458333333333334
+    },
+    {
+      "model": "resnet",
+      "transformation": "brightness_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 7,
+      "flip_fraction": 0.14583333333333334,
+      "mean_probability_change": -0.07766846381127834,
+      "accuracy": 0.6041666666666666
+    },
+    {
+      "model": "resnet",
+      "transformation": "brightness_1.1",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 11,
+      "flip_fraction": 0.22916666666666666,
+      "mean_probability_change": -0.18913441648085913,
+      "accuracy": 0.5833333333333334
+    },
+    {
+      "model": "vit",
+      "transformation": "original",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 0,
+      "flip_fraction": 0.0,
+      "mean_probability_change": 0.0,
+      "accuracy": 0.875
+    },
+    {
+      "model": "vit",
+      "transformation": "grayscale",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 22,
+      "flip_fraction": 0.4583333333333333,
+      "mean_probability_change": -0.3853375818580389,
+      "accuracy": 0.5416666666666666
+    },
+    {
+      "model": "vit",
+      "transformation": "saturation_0.5",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 7,
+      "flip_fraction": 0.14583333333333334,
+      "mean_probability_change": -0.13306592963635921,
+      "accuracy": 0.8125
+    },
+    {
+      "model": "vit",
+      "transformation": "saturation_0.8",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 4,
+      "flip_fraction": 0.08333333333333333,
+      "mean_probability_change": -0.03198313775161902,
+      "accuracy": 0.8541666666666666
+    },
+    {
+      "model": "vit",
+      "transformation": "saturation_1.2",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 2,
+      "flip_fraction": 0.041666666666666664,
+      "mean_probability_change": 0.0009364485740661621,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "model": "vit",
+      "transformation": "saturation_1.5",
+      "mild": false,
+      "n_images": 48,
+      "flip_count": 6,
+      "flip_fraction": 0.125,
+      "mean_probability_change": -0.07293722468117873,
+      "accuracy": 0.8125
+    },
+    {
+      "model": "vit",
+      "transformation": "red_scale_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 2,
+      "flip_fraction": 0.041666666666666664,
+      "mean_probability_change": -0.007948990911245346,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "model": "vit",
+      "transformation": "red_scale_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 4,
+      "flip_fraction": 0.08333333333333333,
+      "mean_probability_change": -0.009823506077130636,
+      "accuracy": 0.9375
+    },
+    {
+      "model": "vit",
+      "transformation": "blue_scale_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 3,
+      "flip_fraction": 0.0625,
+      "mean_probability_change": -0.003971962258219719,
+      "accuracy": 0.9166666666666666
+    },
+    {
+      "model": "vit",
+      "transformation": "blue_scale_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 3,
+      "flip_fraction": 0.0625,
+      "mean_probability_change": -0.012507966409126917,
+      "accuracy": 0.8125
+    },
+    {
+      "model": "vit",
+      "transformation": "brightness_0.9",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 1,
+      "flip_fraction": 0.020833333333333332,
+      "mean_probability_change": 0.006817864874998729,
+      "accuracy": 0.8958333333333334
+    },
+    {
+      "model": "vit",
+      "transformation": "brightness_0.95",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 0,
+      "flip_fraction": 0.0,
+      "mean_probability_change": 0.012844828888773918,
+      "accuracy": 0.875
+    },
+    {
+      "model": "vit",
+      "transformation": "brightness_1.05",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 2,
+      "flip_fraction": 0.041666666666666664,
+      "mean_probability_change": -0.014061727871497473,
+      "accuracy": 0.875
+    },
+    {
+      "model": "vit",
+      "transformation": "brightness_1.1",
+      "mild": true,
+      "n_images": 48,
+      "flip_count": 2,
+      "flip_fraction": 0.041666666666666664,
+      "mean_probability_change": -0.043105908979972206,
+      "accuracy": 0.875
+    }
+  ],
+  "matched_region_results": [
+    {
+      "model": "resnet",
+      "delta": -16,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.2831761700411638,
+      "peripheral_mean_abs_probability_change": 0.06555543715755145,
+      "central_flip_fraction": 0.2708333333333333,
+      "peripheral_flip_fraction": 0.0625
+    },
+    {
+      "model": "resnet",
+      "delta": -8,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.072307496642073,
+      "peripheral_mean_abs_probability_change": 0.027113003035386402,
+      "central_flip_fraction": 0.041666666666666664,
+      "peripheral_flip_fraction": 0.0
+    },
+    {
+      "model": "resnet",
+      "delta": 8,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.03290777405103047,
+      "peripheral_mean_abs_probability_change": 0.025940001010894775,
+      "central_flip_fraction": 0.020833333333333332,
+      "peripheral_flip_fraction": 0.0
+    },
+    {
+      "model": "resnet",
+      "delta": 16,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.12116309441626072,
+      "peripheral_mean_abs_probability_change": 0.042834664384524025,
+      "central_flip_fraction": 0.10416666666666666,
+      "peripheral_flip_fraction": 0.0
+    },
+    {
+      "model": "vit",
+      "delta": -16,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.07491535382966201,
+      "peripheral_mean_abs_probability_change": 0.04067108407616615,
+      "central_flip_fraction": 0.0625,
+      "peripheral_flip_fraction": 0.041666666666666664
+    },
+    {
+      "model": "vit",
+      "delta": -8,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.022218987966577213,
+      "peripheral_mean_abs_probability_change": 0.01418641706307729,
+      "central_flip_fraction": 0.041666666666666664,
+      "peripheral_flip_fraction": 0.0
+    },
+    {
+      "model": "vit",
+      "delta": 8,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.028226619586348537,
+      "peripheral_mean_abs_probability_change": 0.013396489744385084,
+      "central_flip_fraction": 0.020833333333333332,
+      "peripheral_flip_fraction": 0.020833333333333332
+    },
+    {
+      "model": "vit",
+      "delta": 16,
+      "n_images": 16,
+      "central_mean_abs_probability_change": 0.0918434386452039,
+      "peripheral_mean_abs_probability_change": 0.031203075622518856,
+      "central_flip_fraction": 0.041666666666666664,
+      "peripheral_flip_fraction": 0.041666666666666664
+    }
+  ],
+  "intervention_evaluations": 2144,
+  "fresh_original_evaluations": 96,
+  "extra_repeat_audit_evaluations": 32,
+  "reference": "Within-device original probabilities; all 48 gated against trusted preds exports for each model.",
+  "mask_review": {
+    "status": "accepted_approximate_visual_review",
+    "reviewer": "Coding assistant: visual inspection of original 48-image contact sheet and all 16 original/contour/intervention preview rows; not a clinical expert or human reviewer.",
+    "scope": "Approximate geometric central-cell regions, not expert biological segmentation. Peripheral regions can contain other cells."
+  },
+  "limitations": [
+    "48-image set is class-balanced and disagreement-enriched, not representative.",
+    "Color perturbations are RGB manipulations, not validated stain normalization or label-preserving microscope simulations.",
+    "Grayscale and strong saturation are feature ablations; whole-region interventions have unequal area/intensity.",
+    "Geometric masks are approximate assistant-reviewed regions, not expert cell segmentation. Peripheral regions can contain other cells.",
+    "Matched controls use dispersed eligible pixels, not contiguous whole-cell replacements. Areas/intensities are exactly matched but spatial texture/context is not.",
+    "Three spatial repeats are averaged within image; they are not independent biological observations.",
+    "Changes in each model's own baseline probability need not refer to the same class; true-class changes are also exported.",
+    "Sensitivity/stability is not correctness, calibration, biological feature recognition, or architecture superiority."
+  ]
+}

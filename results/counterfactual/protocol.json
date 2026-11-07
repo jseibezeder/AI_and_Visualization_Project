@@ -1,0 +1,170 @@
+{
+  "signature": "0558573cfb3a1ec92cc86819f645d57971e6ed19e90e1e3ad5a978be946ddae6",
+  "config": {
+    "schema_version": 1,
+    "seed": 45,
+    "axes": {
+      "rotation": {
+        "unit": 0.025,
+        "max_tick": 1200,
+        "coarse_stride": 200,
+        "scan_stride": 10,
+        "unit_name": "degrees"
+      },
+      "translation": {
+        "unit": 0.0125,
+        "max_tick": 240,
+        "coarse_stride": 80,
+        "scan_stride": 10,
+        "unit_name": "horizontal pixels"
+      }
+    },
+    "fill_rgb": [
+      128,
+      128,
+      128
+    ],
+    "baseline_atol": 0.0005,
+    "baseline_rtol": 0.0001,
+    "scope": "Coarse grid, complete global scan, then all observed top-1 brackets refined to one tick. Narrower unobserved islands remain possible."
+  },
+  "manifest": {
+    "split": "test",
+    "sample_indices": [
+      65,
+      105,
+      194,
+      432,
+      809,
+      906,
+      2494,
+      2878
+    ],
+    "true_labels": [
+      0,
+      3,
+      6,
+      5,
+      6,
+      1,
+      5,
+      5
+    ],
+    "class_names": [
+      "basophil",
+      "eosinophil",
+      "erythroblast",
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",
+      "lymphocyte",
+      "monocyte",
+      "neutrophil",
+      "platelet"
+    ],
+    "images_sha256": "0d64be97a7fffdcee52c2847f274af7e6f3293b360db7489fa668087a9205e6d",
+    "selection": [
+      {
+        "sample_index": 65,
+        "experiment": "1",
+        "selection_criterion": "Largest probability-vector JS among different-class predictions",
+        "score": 0.9932972866720883,
+        "evidence": "JS=0.9932972866720883 bits; group=only_vit_correct; ResNet=3; ViT=0"
+      },
+      {
+        "sample_index": 105,
+        "experiment": "3",
+        "selection_criterion": "Largest inter-model difference in peak absolute true-class occlusion response",
+        "score": 0.8321294784545898,
+        "evidence": "True-class occlusion peak |response|: ResNet=0.94624615, ViT=0.11411667"
+      },
+      {
+        "sample_index": 194,
+        "experiment": "4",
+        "selection_criterion": "Largest mild red/blue one-model-only response difference, initially both correct",
+        "score": 0.9990410208702087,
+        "evidence": "red_scale_0.95; both initially correct; flips ResNet=1, ViT=0"
+      },
+      {
+        "sample_index": 432,
+        "experiment": "3",
+        "selection_criterion": "Largest inter-model difference in peak absolute true-class occlusion response",
+        "score": 0.8222358580678701,
+        "evidence": "True-class occlusion peak |response|: ResNet=0.83093041, ViT=0.0086945537"
+      },
+      {
+        "sample_index": 809,
+        "experiment": "2",
+        "selection_criterion": "Largest inter-model retained-probability gap under prior rotation, within E2/E3 overlap",
+        "score": 0.9975394890643656,
+        "evidence": "rotation=-20; retained p(original): ResNet=1, ViT=0.0024605109"
+      },
+      {
+        "sample_index": 906,
+        "experiment": "1",
+        "selection_criterion": "Largest probability-vector JS among same-class predictions",
+        "score": 0.13220536273252806,
+        "evidence": "JS=0.13220536273252806 bits; group=both_incorrect; ResNet=3; ViT=3"
+      },
+      {
+        "sample_index": 2494,
+        "experiment": "2",
+        "selection_criterion": "Largest inter-model retained-probability gap under prior translation, within E2/E3 overlap",
+        "score": 0.9992329543940741,
+        "evidence": "translation=3; retained p(original): ResNet=3.2716878e-06, ViT=0.99923623"
+      },
+      {
+        "sample_index": 2878,
+        "experiment": "4",
+        "selection_criterion": "Largest mild red/blue one-model-only response difference, initially both correct",
+        "score": 0.9960576891899109,
+        "evidence": "red_scale_1.05; both initially correct; flips ResNet=1, ViT=0"
+      }
+    ],
+    "selection_bias": "Eight deliberately informative examples from the class-balanced, disagreement-enriched 48-image set; no E5 outcomes used for selection."
+  },
+  "input_sha256": {
+    "results/occlusion/subset/manifest.json": "c069c9a11e71e330e62ea8d0e57fcf5deaea4ce7c8e877f1c7eef774b78deea9",
+    "results/analysis/test/tables/all_samples.csv": "3ea09afa98f40b05be251898f62bb760303f85cb7bedbb9fe997dd1385aa18e8",
+    "results/stability/subset/manifest.json": "7bc9a12dff255e6784475984081d4cbbbac98caeea1c6604c1da2eb39837129e",
+    "results/stability/tables/per_image_metrics.csv": "96e76d57c25734e7b10c43973cce7736ac45e2fbd5a7bc2ebc95c09b4a3b6111",
+    "results/occlusion/tables/map_summary.csv": "d6baf0ae612f1ae3e1ebc777349495507cf27c2320830e12c12f718b45599f97",
+    "results/color_background/tables/color_per_image.csv": "58e5ff57462e2376147488ea5fca753358abd27fcc1b115217ff840d02e64b41",
+    "skript/counterfactual.py": "634f03c175ab0a02f171521713d2e5554cd1315550e8f4cadc66b409a3231ed2",
+    "skript/inference.py": "aa7a502146f2c3395e79cda61f4d5ddbbfc0185b2ea23dad119fe3e568c0cbd5",
+    "skript/analysis.py": "ff61573b99bced7c3802afb04f6b07b249d63d10c0445181bfb8f6b554aba812",
+    "skript/occlusion.py": "c8c72d082b83e2028025c386e6317f27aef8f030a10972695aa37be6e55d76fe",
+    "skript/color_background.py": "6c692559f1664ebaea27056512adb52cb63eddb862f352754ff177b282247be6",
+    "models/resnet18/resnet18_28_1.pth": "d1fe55082ca191d5efc1ea20cc042a606598bf88b8911598b9ba1a9e30cae99b",
+    "models/resnet18/models.py": "db0a8cb6f9d2a50dec1e57bacb41469980c519cac3afd4387420e69a292fad47",
+    "models/vit/model.safetensors": "d89afc010d716e3d901590bd1005c46955cce17d2ecf5dbe81ed8b4c0c1eaafd",
+    "models/vit/config.json": "1c9c254a32b7ded952ce66b80f51525ccef3760e721cacee72e4357d37aa2832",
+    "models/vit/preprocessor_config.json": "a34861a24e781942424ad790b82bc99348404a2e64ea882de88c40905851698d",
+    "results/stability/predictions/resnet/rotation_-20_r0.npz": "5ea3a46dc908ccc5b83d7770787f98942732a1c48a68e01bdca8485a18f969c2",
+    "results/stability/predictions/resnet/rotation_-10_r0.npz": "5c41d87b8a185f976e96bad6968f347589078ed73f785ad2cd987b84ef6e2526",
+    "results/stability/predictions/resnet/rotation_-5_r0.npz": "5d4778e1acb7a97ec9b4c0043496ec190d46981cc1753a8d3a0fe73f2ced580f",
+    "results/stability/predictions/resnet/rotation_5_r0.npz": "b87f8efa3b2f291de8902543e486f8a60d9582d65750e90d7b9aa23caf891d12",
+    "results/stability/predictions/resnet/rotation_10_r0.npz": "0ff1b713c60718873b099f10f118d3c92d2685de94da7f7bed020e7de8db7ecd",
+    "results/stability/predictions/resnet/rotation_20_r0.npz": "5d258e14726af9739dcd7d9c97fbe4983eed0ba78be78a825eefb9fe854cb6ba",
+    "results/stability/predictions/vit/rotation_-20_r0.npz": "a170ccdc34b0e2a5ffc9ae5b87d10d9791c6f2c649ba3694ea287d1cf985de87",
+    "results/stability/predictions/vit/rotation_-10_r0.npz": "0a2d9848d92f34682422115a71d786e966b55906740ad8678f3a9ae81d33b486",
+    "results/stability/predictions/vit/rotation_-5_r0.npz": "eda0f41855bed9edbe1e38c6651c23023ff5e059f6448dd1c433691aa4922966",
+    "results/stability/predictions/vit/rotation_5_r0.npz": "6895db5225c9d7c548d1853b2b937e41791b43bcb17c45294815975fa79dc0f9",
+    "results/stability/predictions/vit/rotation_10_r0.npz": "0cb2713c7808a6b3547db9662491665e90c755c91e4b0b79d656301141a92e10",
+    "results/stability/predictions/vit/rotation_20_r0.npz": "6ed31294530220e9e5a9e23fac2da93a1adb32e5ab114bae4a4a5dfbeb68806c",
+    "results/stability/predictions/resnet/translation_-3_r0.npz": "ae86f4fdfd3e76791845d3412652627991256037ecd65988ae04547805c34588",
+    "results/stability/predictions/resnet/translation_-2_r0.npz": "1c6ee85640fc3dcad671b21d0af75cbbb56cd2eecb28f44863c59293ffeeff6b",
+    "results/stability/predictions/resnet/translation_-1_r0.npz": "d56fa11563c0d8c5547f3fcdbededd711981c49664a94c7f524eddfcac5eb3e9",
+    "results/stability/predictions/resnet/translation_1_r0.npz": "a766ddf030cbcf1263d34ba3ca28f7958b84571e556ce7c68fdaca8f5314b6f8",
+    "results/stability/predictions/resnet/translation_2_r0.npz": "066cbf7f79c6de04ecac3c91b4017ea35abd006b3e8631a8f8f4c971812779fc",
+    "results/stability/predictions/resnet/translation_3_r0.npz": "093568a9439169c0112b4b782563f9ad5427c95a1855a6b8a20fef8e3d8ada35",
+    "results/stability/predictions/vit/translation_-3_r0.npz": "f8b15575378f4285a4740518c18913a1d76d4f25bedbf62f37a38f5aa59c2be6",
+    "results/stability/predictions/vit/translation_-2_r0.npz": "1d28173c75c343f28e30b9eb1341307c488e56703f717194dcb18af918bbed48",
+    "results/stability/predictions/vit/translation_-1_r0.npz": "0edb5bbffad38ede6ddc15dffb68d8c8bb050ed14aabd48bfc456a1a2bfeaa99",
+    "results/stability/predictions/vit/translation_1_r0.npz": "cb9fb63b6d5bbc0d7cfe1797d670898d1e542b969576187839f5059c7735c760",
+    "results/stability/predictions/vit/translation_2_r0.npz": "d8e11cb8cc2c27a925d0e812fe748fe4840ebf6f337ed4fdca9ba9436e206570",
+    "results/stability/predictions/vit/translation_3_r0.npz": "90c19e14410d0b2e7b45176ddd954813fbec6176729a3fa49f67900ee4c092d9"
+  },
+  "baseline_sha256": {
+    "resnet": "b70f931f36ba5a227a9077f70191550a024142f7171785e2cf5ed71b51e14149",
+    "vit": "574b86681e9bfc189c766c1b7229826952437bc65bb7eb78dc23d9580706e072"
+  }
+}

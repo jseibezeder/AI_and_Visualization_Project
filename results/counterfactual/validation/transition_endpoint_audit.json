@@ -1,0 +1,40 @@
+{
+  "protocol_signature": "0558573cfb3a1ec92cc86819f645d57971e6ed19e90e1e3ad5a978be946ddae6",
+  "audit_code_sha256": "a346e07f854a44c7fd261f96f451b2bef51745d1f1db679de7f1789d79a4ac0f",
+  "raw_inputs_sha256": "a163c3ee4ebae9139411822889c586f84daf8fd610dd2b0ef73ff10222de3597",
+  "endpoint_input_count": 255,
+  "additional_inference_evaluations": 1530,
+  "scope": "Union of both models' observed transition endpoints, repeated three times for each model. Not all unsampled points or a cross-device guarantee.",
+  "models": {
+    "resnet": {
+      "endpoints": 255,
+      "repeats": 3,
+      "max_abs_error_from_saved": 5.066394805908203e-07,
+      "max_repeat_probability_range": 0.0,
+      "min_top2_probability_margin": 0.0001430511474609375,
+      "argmax_mismatches": 0,
+      "warnings": []
+    },
+    "vit": {
+      "endpoints": 255,
+      "repeats": 3,
+      "max_abs_error_from_saved": 1.1641532182693481e-09,
+      "max_repeat_probability_range": 0.0,
+      "min_top2_probability_margin": 0.00020390748977661133,
+      "argmax_mismatches": 0,
+      "warnings": []
+    }
+  },
+  "local_zoom": {
+    "sample_index": 2878,
+    "axis": "rotation",
+    "chosen_ticks": [
+      0,
+      201,
+      202,
+      203
+    ],
+    "selection": "Post-search illustrative ResNet positive-ray switch, return and next departure; not a new image-selection procedure.",
+    "figure": "figures\\boundary_zoom_sample_02878.png"
+  }
+}

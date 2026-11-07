@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "seed": 45,
+  "axes": {
+    "rotation": {
+      "unit": 0.025,
+      "max_tick": 1200,
+      "coarse_stride": 200,
+      "scan_stride": 10,
+      "unit_name": "degrees"
+    },
+    "translation": {
+      "unit": 0.0125,
+      "max_tick": 240,
+      "coarse_stride": 80,
+      "scan_stride": 10,
+      "unit_name": "horizontal pixels"
+    }
+  },
+  "fill_rgb": [
+    128,
+    128,
+    128
+  ],
+  "baseline_atol": 0.0005,
+  "baseline_rtol": 0.0001,
+  "scope": "Coarse grid, complete global scan, then all observed top-1 brackets refined to one tick. Narrower unobserved islands remain possible."
+}

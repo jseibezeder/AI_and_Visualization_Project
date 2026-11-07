@@ -1,0 +1,8 @@
+coarse resnet: 160 tick evaluations, 144 unique new RGB inputs
+coarse vit: 160 tick evaluations, 144 unique new RGB inputs
+Prior Experiment 2 equivalence: 72 matching image/model/geometry checks
+scan resnet: 2160 tick evaluations, 2160 unique new RGB inputs
+scan vit: 2160 tick evaluations, 2160 unique new RGB inputs
+refine resnet: 927 tick evaluations, 927 unique new RGB inputs
+refine vit: 927 tick evaluations, 927 unique new RGB inputs
+Experiment 5 complete: 8 images, 137 observed transitions, 57 observed returns.

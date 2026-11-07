@@ -1,0 +1,9 @@
+sample_index,experiment,selection_criterion,score,evidence
+65,1,Largest probability-vector JS among different-class predictions,0.9932972866720883,JS=0.9932972866720883 bits; group=only_vit_correct; ResNet=3; ViT=0
+105,3,Largest inter-model difference in peak absolute true-class occlusion response,0.8321294784545898,"True-class occlusion peak |response|: ResNet=0.94624615, ViT=0.11411667"
+194,4,"Largest mild red/blue one-model-only response difference, initially both correct",0.9990410208702087,"red_scale_0.95; both initially correct; flips ResNet=1, ViT=0"
+432,3,Largest inter-model difference in peak absolute true-class occlusion response,0.8222358580678701,"True-class occlusion peak |response|: ResNet=0.83093041, ViT=0.0086945537"
+809,2,"Largest inter-model retained-probability gap under prior rotation, within E2/E3 overlap",0.9975394890643656,"rotation=-20; retained p(original): ResNet=1, ViT=0.0024605109"
+906,1,Largest probability-vector JS among same-class predictions,0.13220536273252806,JS=0.13220536273252806 bits; group=both_incorrect; ResNet=3; ViT=3
+2494,2,"Largest inter-model retained-probability gap under prior translation, within E2/E3 overlap",0.9992329543940741,"translation=3; retained p(original): ResNet=3.2716878e-06, ViT=0.99923623"
+2878,4,"Largest mild red/blue one-model-only response difference, initially both correct",0.9960576891899109,"red_scale_1.05; both initially correct; flips ResNet=1, ViT=0"

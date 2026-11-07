@@ -1,0 +1,429 @@
+{
+  "signature": "254d2b8e25c090b511fa0ab11325a2fcf016bd4346515b26786d8a806a3aba69",
+  "config": {
+    "schema_version": 1,
+    "seed": 44,
+    "source_manifest": "results/occlusion/subset/manifest.json",
+    "color_conditions": [
+      {
+        "key": "original",
+        "kind": "identity",
+        "level": 1.0,
+        "mild": false
+      },
+      {
+        "key": "grayscale",
+        "kind": "saturation",
+        "level": 0.0,
+        "mild": false
+      },
+      {
+        "key": "saturation_0.5",
+        "kind": "saturation",
+        "level": 0.5,
+        "mild": false
+      },
+      {
+        "key": "saturation_0.8",
+        "kind": "saturation",
+        "level": 0.8,
+        "mild": true
+      },
+      {
+        "key": "saturation_1.2",
+        "kind": "saturation",
+        "level": 1.2,
+        "mild": true
+      },
+      {
+        "key": "saturation_1.5",
+        "kind": "saturation",
+        "level": 1.5,
+        "mild": false
+      },
+      {
+        "key": "red_scale_0.95",
+        "kind": "red_scale",
+        "level": 0.95,
+        "mild": true
+      },
+      {
+        "key": "red_scale_1.05",
+        "kind": "red_scale",
+        "level": 1.05,
+        "mild": true
+      },
+      {
+        "key": "blue_scale_0.95",
+        "kind": "blue_scale",
+        "level": 0.95,
+        "mild": true
+      },
+      {
+        "key": "blue_scale_1.05",
+        "kind": "blue_scale",
+        "level": 1.05,
+        "mild": true
+      },
+      {
+        "key": "brightness_0.9",
+        "kind": "brightness",
+        "level": 0.9,
+        "mild": true
+      },
+      {
+        "key": "brightness_0.95",
+        "kind": "brightness",
+        "level": 0.95,
+        "mild": true
+      },
+      {
+        "key": "brightness_1.05",
+        "kind": "brightness",
+        "level": 1.05,
+        "mild": true
+      },
+      {
+        "key": "brightness_1.1",
+        "kind": "brightness",
+        "level": 1.1,
+        "mild": true
+      }
+    ],
+    "region_blur_sigma": 2.0,
+    "matched_deltas": [
+      -16,
+      -8,
+      8,
+      16
+    ],
+    "matched_max_pixels": 64,
+    "matched_min_pixels": 24,
+    "matched_repeats": 3,
+    "baseline_atol": 0.0005,
+    "baseline_rtol": 0.0001,
+    "note": "Grayscale/strong saturation are feature ablations. Mild is an operational magnitude label, not evidence of stain realism or label preservation."
+  },
+  "source_manifest": {
+    "split": "test",
+    "seed": 43,
+    "sample_indices": [
+      48,
+      50,
+      65,
+      105,
+      118,
+      164,
+      194,
+      432,
+      447,
+      454,
+      689,
+      809,
+      873,
+      881,
+      906,
+      952,
+      1013,
+      1023,
+      1151,
+      1213,
+      1314,
+      1416,
+      1460,
+      1680,
+      1731,
+      1758,
+      1819,
+      1859,
+      1863,
+      1885,
+      2034,
+      2055,
+      2179,
+      2241,
+      2493,
+      2494,
+      2589,
+      2628,
+      2698,
+      2835,
+      2878,
+      2922,
+      3035,
+      3203,
+      3220,
+      3247,
+      3283,
+      3364
+    ],
+    "selection": "Up to two model-disagreement images per class, remaining slots sampled uniformly without replacement from that class",
+    "class_names": [
+      "basophil",
+      "eosinophil",
+      "erythroblast",
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",
+      "lymphocyte",
+      "monocyte",
+      "neutrophil",
+      "platelet"
+    ],
+    "images_sha256": "8b50d8958f7363cb2acc7e6239231870678c23d195448fb001e569f524c15ed7",
+    "true_labels": [
+      3,
+      5,
+      0,
+      3,
+      2,
+      0,
+      6,
+      5,
+      7,
+      5,
+      2,
+      6,
+      1,
+      1,
+      1,
+      0,
+      2,
+      3,
+      7,
+      4,
+      1,
+      0,
+      3,
+      1,
+      7,
+      7,
+      0,
+      6,
+      0,
+      3,
+      6,
+      4,
+      7,
+      6,
+      4,
+      5,
+      1,
+      2,
+      7,
+      6,
+      5,
+      2,
+      4,
+      4,
+      2,
+      3,
+      5,
+      4
+    ],
+    "disagreement_count": 16
+  },
+  "mask_review": {
+    "status": "accepted_approximate_visual_review",
+    "reviewer": "Coding assistant: visual inspection of original 48-image contact sheet and all 16 original/contour/intervention preview rows; not a clinical expert or human reviewer.",
+    "scope": "Approximate geometric central-cell regions, not expert biological segmentation. Peripheral regions can contain other cells.",
+    "selection": "Two visually inspectable original images per class, chosen before Experiment 4 inference; no selection by new model effects.",
+    "excluded_examples": {
+      "118": "Target is clipped at the left image boundary.",
+      "881": "Cell is cropped/irregular near the lower-right edge."
+    },
+    "images_sha256": "8b50d8958f7363cb2acc7e6239231870678c23d195448fb001e569f524c15ed7",
+    "regions": [
+      {
+        "sample_index": 48,
+        "ellipse": [
+          14,
+          16,
+          10.5,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Contour encloses the prominent central cell; some pale edge pixels remain approximate."
+      },
+      {
+        "sample_index": 50,
+        "ellipse": [
+          14,
+          14,
+          11,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Broad central round cell; outline contains approximate cytoplasmic boundary."
+      },
+      {
+        "sample_index": 65,
+        "ellipse": [
+          14,
+          14,
+          10,
+          10
+        ],
+        "accepted": true,
+        "note": "Central dark round cell is isolated from peripheral neighboring cells."
+      },
+      {
+        "sample_index": 105,
+        "ellipse": [
+          14,
+          14,
+          10.5,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Central round cell; pale peripheral boundary is approximate."
+      },
+      {
+        "sample_index": 164,
+        "ellipse": [
+          13.5,
+          14,
+          10,
+          10
+        ],
+        "accepted": true,
+        "note": "Central dark round cell; boundary is geometric rather than pixel segmentation."
+      },
+      {
+        "sample_index": 194,
+        "ellipse": [
+          15,
+          17,
+          11,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Lower-central cell; irregular edge and cytoplasm only approximately captured."
+      },
+      {
+        "sample_index": 432,
+        "ellipse": [
+          15,
+          15,
+          11,
+          12
+        ],
+        "accepted": true,
+        "note": "Large central cell near bottom; ellipse approaches image edge and is approximate."
+      },
+      {
+        "sample_index": 447,
+        "ellipse": [
+          14,
+          13.5,
+          4.5,
+          5
+        ],
+        "accepted": true,
+        "note": "Small central platelet-like target; most pixels are peripheral and may contain other cells."
+      },
+      {
+        "sample_index": 689,
+        "ellipse": [
+          14,
+          15.5,
+          8.5,
+          8.5
+        ],
+        "accepted": true,
+        "note": "Central compact cell with surrounding pale halo; ellipse includes approximate halo."
+      },
+      {
+        "sample_index": 809,
+        "ellipse": [
+          14,
+          15,
+          10,
+          11
+        ],
+        "accepted": true,
+        "note": "Central cell; irregular nuclear shape is not separately segmented."
+      },
+      {
+        "sample_index": 873,
+        "ellipse": [
+          14.5,
+          18.5,
+          10,
+          9
+        ],
+        "accepted": true,
+        "note": "Lower-central lobulated cell; ellipse is deliberately approximate around cytoplasm."
+      },
+      {
+        "sample_index": 906,
+        "ellipse": [
+          14,
+          14.5,
+          10,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Centered round cell; outer pale boundary is uncertain at 28-pixel resolution."
+      },
+      {
+        "sample_index": 1013,
+        "ellipse": [
+          14,
+          15,
+          9,
+          9
+        ],
+        "accepted": true,
+        "note": "Central round cell; neighboring lower-right cell lies mainly outside mask."
+      },
+      {
+        "sample_index": 1151,
+        "ellipse": [
+          13.5,
+          13.5,
+          5,
+          5
+        ],
+        "accepted": true,
+        "note": "Small central platelet-like target; peripheral field includes neighboring cells."
+      },
+      {
+        "sample_index": 1213,
+        "ellipse": [
+          14,
+          15,
+          9,
+          10
+        ],
+        "accepted": true,
+        "note": "Central oval cell; geometric contour includes approximate pale edge."
+      },
+      {
+        "sample_index": 2055,
+        "ellipse": [
+          14,
+          16,
+          9,
+          10.5
+        ],
+        "accepted": true,
+        "note": "Central cell with narrow upper protrusion; ellipse may miss part of protrusion. Interpret as central-region approximation only."
+      }
+    ],
+    "review_date": "2026-11-07"
+  },
+  "asset_sha256": {
+    "models/resnet18/resnet18_28_1.pth": "d1fe55082ca191d5efc1ea20cc042a606598bf88b8911598b9ba1a9e30cae99b",
+    "models/resnet18/models.py": "db0a8cb6f9d2a50dec1e57bacb41469980c519cac3afd4387420e69a292fad47",
+    "models/vit/model.safetensors": "d89afc010d716e3d901590bd1005c46955cce17d2ecf5dbe81ed8b4c0c1eaafd",
+    "models/vit/config.json": "1c9c254a32b7ded952ce66b80f51525ccef3760e721cacee72e4357d37aa2832",
+    "models/vit/preprocessor_config.json": "a34861a24e781942424ad790b82bc99348404a2e64ea882de88c40905851698d"
+  },
+  "implementation_sha256": {
+    "skript/color_background.py": "6c692559f1664ebaea27056512adb52cb63eddb862f352754ff177b282247be6",
+    "skript/inference.py": "aa7a502146f2c3395e79cda61f4d5ddbbfc0185b2ea23dad119fe3e568c0cbd5"
+  },
+  "baseline_sha256": {
+    "resnet": "21e798b5ab3adf26e9127cbd3eaaafe16b38e4adc85c764a4484bd3697b050f0",
+    "vit": "31bc1863974e516ce1746fa609dd74a58265a13b4f2f9ca74e1e53fb51158b3e"
+  }
+}

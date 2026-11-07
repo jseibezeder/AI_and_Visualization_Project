@@ -1,0 +1,33 @@
+{
+  "device": "cuda:0",
+  "torch_version": "2.14.0+cu126",
+  "evaluation_mode": true,
+  "deterministic_algorithms": true,
+  "deterministic_warn_only": true,
+  "seed": 44,
+  "preprocessing": "Local ViTImageProcessor: RGB resize224 bilinear, /255, mean/std=0.5",
+  "numpy_version": "2.5.2",
+  "pillow_version": "12.3.0",
+  "transformers_version": "4.57.6",
+  "batch_size": 32,
+  "device_name": "Quadro RTX 4000",
+  "protocol_signature": "254d2b8e25c090b511fa0ab11325a2fcf016bd4346515b26786d8a806a3aba69",
+  "environment_signature": "74828afe04050bbefb92664ab1f363ecb4220b21a7415a207069e4f70be47c83",
+  "baseline_images": 48,
+  "extra_repeat_evaluations": 16,
+  "repeat_sample_indices": [
+    65,
+    873,
+    118,
+    48,
+    1213,
+    50,
+    194,
+    447
+  ],
+  "baseline_max_abs_error": 1.6689300537109375e-06,
+  "repeat_max_probability_range": 1.1920928955078125e-07,
+  "baseline_equivalence": "All 48 decisions identical and probabilities allclose to trusted exports.",
+  "warnings": [],
+  "elapsed_seconds": 20.3541556999553
+}

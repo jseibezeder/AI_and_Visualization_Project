@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "seed": 44,
+  "source_manifest": "results/occlusion/subset/manifest.json",
+  "color_conditions": [
+    {
+      "key": "original",
+      "kind": "identity",
+      "level": 1.0,
+      "mild": false
+    },
+    {
+      "key": "grayscale",
+      "kind": "saturation",
+      "level": 0.0,
+      "mild": false
+    },
+    {
+      "key": "saturation_0.5",
+      "kind": "saturation",
+      "level": 0.5,
+      "mild": false
+    },
+    {
+      "key": "saturation_0.8",
+      "kind": "saturation",
+      "level": 0.8,
+      "mild": true
+    },
+    {
+      "key": "saturation_1.2",
+      "kind": "saturation",
+      "level": 1.2,
+      "mild": true
+    },
+    {
+      "key": "saturation_1.5",
+      "kind": "saturation",
+      "level": 1.5,
+      "mild": false
+    },
+    {
+      "key": "red_scale_0.95",
+      "kind": "red_scale",
+      "level": 0.95,
+      "mild": true
+    },
+    {
+      "key": "red_scale_1.05",
+      "kind": "red_scale",
+      "level": 1.05,
+      "mild": true
+    },
+    {
+      "key": "blue_scale_0.95",
+      "kind": "blue_scale",
+      "level": 0.95,
+      "mild": true
+    },
+    {
+      "key": "blue_scale_1.05",
+      "kind": "blue_scale",
+      "level": 1.05,
+      "mild": true
+    },
+    {
+      "key": "brightness_0.9",
+      "kind": "brightness",
+      "level": 0.9,
+      "mild": true
+    },
+    {
+      "key": "brightness_0.95",
+      "kind": "brightness",
+      "level": 0.95,
+      "mild": true
+    },
+    {
+      "key": "brightness_1.05",
+      "kind": "brightness",
+      "level": 1.05,
+      "mild": true
+    },
+    {
+      "key": "brightness_1.1",
+      "kind": "brightness",
+      "level": 1.1,
+      "mild": true
+    }
+  ],
+  "region_blur_sigma": 2.0,
+  "matched_deltas": [
+    -16,
+    -8,
+    8,
+    16
+  ],
+  "matched_max_pixels": 64,
+  "matched_min_pixels": 24,
+  "matched_repeats": 3,
+  "baseline_atol": 0.0005,
+  "baseline_rtol": 0.0001,
+  "note": "Grayscale/strong saturation are feature ablations. Mild is an operational magnitude label, not evidence of stain realism or label preservation."
+}

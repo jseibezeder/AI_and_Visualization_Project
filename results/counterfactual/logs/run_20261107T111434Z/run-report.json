@@ -1,0 +1,20 @@
+{
+  "command": [
+    "E:\\Semester_9\\vis\\.venv\\Scripts\\python.exe",
+    "-u",
+    "skript/counterfactual.py",
+    "run",
+    "--device",
+    "cuda:0",
+    "--batch-size",
+    "32"
+  ],
+  "cwd": "E:\\Semester_9\\vis",
+  "exit_code": 0,
+  "state": "succeeded",
+  "elapsed_seconds": 59.50855112075806,
+  "missing_outputs": [],
+  "error": null,
+  "log": "E:\\Semester_9\\vis\\results\\counterfactual\\logs\\run_20261107T111434Z\\run.log",
+  "log_tail": "coarse resnet: 160 tick evaluations, 144 unique new RGB inputs\ncoarse vit: 160 tick evaluations, 144 unique new RGB inputs\nPrior Experiment 2 equivalence: 72 matching image/model/geometry checks\nscan resnet: 2160 tick evaluations, 2160 unique new RGB inputs\nscan vit: 2160 tick evaluations, 2160 unique new RGB inputs\nrefine resnet: 927 tick evaluations, 927 unique new RGB inputs\nrefine vit: 927 tick evaluations, 927 unique new RGB inputs\nExperiment 5 complete: 8 images, 137 observed transitions, 57 observed returns.\n"
+}

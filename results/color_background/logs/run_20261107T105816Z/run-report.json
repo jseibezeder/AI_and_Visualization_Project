@@ -1,0 +1,20 @@
+{
+  "command": [
+    "E:\\Semester_9\\vis\\.venv\\Scripts\\python.exe",
+    "-u",
+    "skript/color_background.py",
+    "run",
+    "--device",
+    "cuda:0",
+    "--batch-size",
+    "32"
+  ],
+  "cwd": "E:\\Semester_9\\vis",
+  "exit_code": 0,
+  "state": "succeeded",
+  "elapsed_seconds": 41.27615785598755,
+  "missing_outputs": [],
+  "error": null,
+  "log": "E:\\Semester_9\\vis\\results\\color_background\\logs\\run_20261107T105816Z\\run.log",
+  "log_tail": "resnet 2/30: color/grayscale (48 inputs)\nresnet 3/30: color/saturation_0.5 (48 inputs)\nresnet 4/30: color/saturation_0.8 (48 inputs)\nresnet 5/30: color/saturation_1.2 (48 inputs)\nresnet 6/30: color/saturation_1.5 (48 inputs)\nresnet 7/30: color/red_scale_0.95 (48 inputs)\nresnet 8/30: color/red_scale_1.05 (48 inputs)\nresnet 9/30: color/blue_scale_0.95 (48 inputs)\nresnet 10/30: color/blue_scale_1.05 (48 inputs)\nresnet 11/30: color/brightness_0.9 (48 inputs)\nresnet 12/30: color/brightness_0.95 (48 inputs)\nresnet 13/30: color/brightness_1.05 (48 inputs)\nresnet 14/30: color/brightness_1.1 (48 inputs)\nresnet 15/30: regions/sample_00048 (28 inputs)\nresnet 16/30: regions/sample_00050 (28 inputs)\nresnet 17/30: regions/sample_00065 (28 inputs)\nresnet 18/30: regions/sample_00105 (28 inputs)\nresnet 19/30: regions/sample_00164 (28 inputs)\nresnet 20/30: regions/sample_00194 (28 inputs)\nresnet 21/30: regions/sample_00432 (28 inputs)\nresnet 22/30: regions/sample_00447 (28 inputs)\nresnet 23/30: regions/sample_00689 (28 inputs)\nresnet 24/30: regions/sample_00809 (28 inputs)\nresnet 25/30: regions/sample_00873 (28 inputs)\nresnet 26/30: regions/sample_00906 (28 inputs)\nresnet 27/30: regions/sample_01013 (28 inputs)\nresnet 28/30: regions/sample_01151 (28 inputs)\nresnet 29/30: regions/sample_01213 (28 inputs)\nresnet 30/30: regions/sample_02055 (28 inputs)\nvit 2/30: color/grayscale (48 inputs)\nvit 3/30: color/saturation_0.5 (48 inputs)\nvit 4/30: color/saturation_0.8 (48 inputs)\nvit 5/30: color/saturation_1.2 (48 inputs)\nvit 6/30: color/saturation_1.5 (48 inputs)\nvit 7/30: color/red_scale_0.95 (48 inputs)\nvit 8/30: color/red_scale_1.05 (48 inputs)\nvit 9/30: color/blue_scale_0.95 (48 inputs)\nvit 10/30: color/blue_scale_1.05 (48 inputs)\nvit 11/30: color/brightness_0.9 (48 inputs)\nvit 12/30: color/brightness_0.95 (48 inputs)\nvit 13/30: color/brightness_1.05 (48 inputs)\nvit 14/30: color/brightness_1.1 (48 inputs)\nvit 15/30: regions/sample_00048 (28 inputs)\nvit 16/30: regions/sample_00050 (28 inputs)\nvit 17/30: regions/sample_00065 (28 inputs)\nvit 18/30: regions/sample_00105 (28 inputs)\nvit 19/30: regions/sample_00164 (28 inputs)\nvit 20/30: regions/sample_00194 (28 inputs)\nvit 21/30: regions/sample_00432 (28 inputs)\nvit 22/30: regions/sample_00447 (28 inputs)\nvit 23/30: regions/sample_00689 (28 inputs)\nvit 24/30: regions/sample_00809 (28 inputs)\nvit 25/30: regions/sample_00873 (28 inputs)\nvit 26/30: regions/sample_00906 (28 inputs)\nvit 27/30: regions/sample_01013 (28 inputs)\nvit 28/30: regions/sample_01151 (28 inputs)\nvit 29/30: regions/sample_01213 (28 inputs)\nvit 30/30: regions/sample_02055 (28 inputs)\nExperiment 4 complete: 106 mild model-specific flip cases; results in E:\\Semester_9\\vis\\results\\color_background\n"
+}

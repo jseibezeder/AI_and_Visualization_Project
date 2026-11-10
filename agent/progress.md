@@ -1,6 +1,19 @@
 # Presentation and repository handoff
 
-## Latest presentation
+## Latest presentation delivery
+
+- Added `presentation_view.ipynb`, a Markdown-only screen-sharing copy. Its 15
+  cells embed the same seven PNGs as the executable presentation, with no code
+  cells or collapsed-input bars. `presentation.ipynb` stays byte-for-byte unchanged.
+- Added `presentation_aid.md` with brief unslopped talking points for all eight
+  sections. It is separate from both notebooks. The aid also explains confidence
+  thresholds, overlapping pair counts, the resizing tradeoff and causal limits.
+- Actual JupyterLab inspection at 1366x650 confirmed zero code cells/placeholders,
+  seven rendered attachment images and a largest section of about 456px in the 529px
+  notebook area. All source images, original analyses and scientific assets match.
+- Helpers, screenshots and checks are in `runs/presentation-view/`.
+
+## Previous executable presentation
 
 - Created `presentation.ipynb` for the BloodMNIST Phase I midpoint presentation.
   It has 15 cells, six main scientific figures, a compact opening image strip

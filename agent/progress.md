@@ -1,6 +1,21 @@
 # Presentation and repository handoff
 
-## Latest prose revision
+## Latest all-error class summary
+
+- Added per-class recall and HC/all-error counts to `02_model_behavior.ipynb`
+  before the HC-only analysis. All 3,421 TEST predictions contribute; the total
+  row reports overall accuracy and errors, not macro-averaged recall.
+- IG recall is 90.16/90.67/94.65%; neutrophil recall is 98.20/97.15/97.45%.
+  IG HC/all-error counts are 36/57, 28/54 and 18/31. The counts do not establish
+  per-class calibration or a biological cause.
+- Main narrative now has 57 cells and 12 figures. No added figure or inference.
+- Fresh execution passed in 14.82s. Independent per-model cache checks reproduce
+  every confusion count, recall and threshold count. Existing scientific code
+  and outputs, all original cells, data/weights and historical text are unchanged.
+- New prose and existing interpretations were reviewed against unslop. Helpers,
+  original snapshots and validation are under `runs/all-class-performance/`.
+
+## Previous prose revision
 
 - Applied the manually invoked Cursor `unslop` skill to all Markdown cells in
   the three current notebooks, plus `README.md` and `RESULTS.md`.

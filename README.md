@@ -11,7 +11,8 @@ Run the notebooks from the repository root in this order:
 
 1. [01_baseline.ipynb](01_baseline.ipynb) checks saved TEST predictions, labels,
    logits and checkpoint hashes. Optional checkpoint replay is off by default.
-2. [02_model_behavior.ipynb](02_model_behavior.ipynb) examines disagreement,
+2. [02_model_behavior.ipynb](02_model_behavior.ipynb) reports recall and error counts
+   for every class across all TEST predictions. It examines disagreement,
    confidence, input sensitivity and matched errors, then compares IG and
    neutrophil misclassifications. Full error galleries and the optional
    approximate-region study follow the conclusions as supplements.

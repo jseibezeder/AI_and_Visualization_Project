@@ -10,8 +10,9 @@ files are still LFS pointers. Run the notebooks in this order:
    image indices, labels, probabilities, logits and checkpoint/configuration
    hashes. The default run performs no inference or writes. Optional full-TEST
    checkpoint replay is off and verifies the saved predictions without replacing them.
-2. [02_model_behavior.ipynb](02_model_behavior.ipynb) examines disagreement,
-   confidence, input changes and matched error properties. It then compares IG
+2. [02_model_behavior.ipynb](02_model_behavior.ipynb) reports per-class recall
+   and all-error counts before examining high-confidence errors, disagreement,
+   input changes and matched error properties. It then compares IG
    and neutrophil misclassifications and summarizes the model-specific results.
 3. [03_robustness.ipynb](03_robustness.ipynb) shows label-change rates and
    accuracy across the full TEST set under each transformation.
@@ -25,7 +26,7 @@ readable without JavaScript.
 
 ## Supplements and archive
 
-The main behavior analysis ends at its conclusions after 54 cells and 12 figures.
+The main behavior analysis ends at its conclusions after 57 cells and 12 figures.
 [Supplement A](02_model_behavior.ipynb#supplement-galleries) contains all 39
 shared-error images and 18 confidence-selected exclusive examples.
 [Supplement B](02_model_behavior.ipynb#supplement-roi) contains the optional
@@ -61,6 +62,14 @@ comparison includes each checkpoint's preprocessing.
 | ResNet18 with nearest-neighbor resize to 224 | 96.61% | 70 | Brightness, color and noise alter predictions under the original preprocessing. IG has its highest within-class HC-error rate. |
 | Supplied ResNet50 at native 28 | 95.73% | 79 | Largest ECE and strong rotation sensitivity. Rotation by +20° creates 668 errors and recovers 60. |
 | Local ViT with bilinear resize to 224 | 96.99% | 52 | More stable under the tested original brightness and noise changes, but accuracy falls to 52.3% under the strongest blur. |
+
+[The all-prediction class summary](02_model_behavior.ipynb#all-class-performance)
+shows IG recall of 90.16%, 90.67% and 94.65% for ResNet18, ResNet50 and ViT,
+compared with neutrophil recall of 98.20%, 97.15% and 97.45%. Of all IG errors,
+36/57, 28/54 and 18/31 have confidence of at least 90%, so IG errors also occur
+below that threshold. IG has the lowest recall for ResNet18, but monocytes have
+lower recall in ResNet50 and ViT, and basophils also have lower recall in ViT.
+These counts describe class performance, not per-class calibration or biological causes.
 
 All three models share 18 confidently wrong images and predict the same wrong
 labels on them. Confidence and agreement do not guarantee correctness.

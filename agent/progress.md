@@ -1,6 +1,18 @@
 # Presentation and repository handoff
 
-## Latest presentation refinement
+## Latest prose revision
+
+- Applied the manually invoked Cursor `unslop` skill to all Markdown cells in
+  the three current notebooks, plus `README.md` and `RESULTS.md`.
+- Replaced repetitive interpretation templates, dense shorthand and ornamental
+  punctuation with direct prose. Retained cohort definitions, numerical claims,
+  uncertainty qualifications, citations and supplementary links.
+- Code cells, outputs, cell order, notebook metadata, historical text, scientific
+  data and model files remain unchanged. No inference or experiments were run.
+- Originals and validation are under `runs/unslop/`, ignored by Git.
+- User requested the exact commit subject `rework analysis`.
+
+## Previous presentation refinement
 
 - `02_model_behavior.ipynb`: counts-only confusion annotations; reliability-bin
   counts and hollow low-support markers (n<30), without connecting sparse/empty bins.

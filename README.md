@@ -1,44 +1,47 @@
-# BloodMNIST: black-box model behavior
+# BloodMNIST model behavior
 
-Comparison of frozen ResNet18, supplied ResNet50 and ViT pipelines using only
-**3,421 TEST images**. The analysis studies predictions, confidence and responses
-to input changes—not internal activations or a causal explanation of cell morphology.
+This course project compares frozen ResNet18, supplied ResNet50 and ViT models on
+3,421 TEST images. It measures predictions, confidence and responses to input
+changes. It does not inspect internal model representations or establish
+biological causes of errors.
 
 ## Read and run
 
-Run these notebooks from the repository root, in order:
+Run the notebooks from the repository root in this order:
 
-1. **[01_baseline.ipynb](01_baseline.ipynb)** — verify cached TEST predictions,
-   labels, logits and frozen checkpoint hashes; optional checkpoint replay is disabled.
-2. **[02_model_behavior.ipynb](02_model_behavior.ipynb)** — disagreement, confidence,
-   input sensitivity, matched error properties and the focused IG/neutrophil investigation.
-   Complete error galleries and the optional ROI study follow the conclusions as supplements.
-3. **[03_robustness.ipynb](03_robustness.ipynb)** — the two full-test transformation
-   grids: label changes and accuracy.
+1. [01_baseline.ipynb](01_baseline.ipynb) checks saved TEST predictions, labels,
+   logits and checkpoint hashes. Optional checkpoint replay is off by default.
+2. [02_model_behavior.ipynb](02_model_behavior.ipynb) examines disagreement,
+   confidence, input sensitivity and matched errors, then compares IG and
+   neutrophil misclassifications. Full error galleries and the optional
+   approximate-region study follow the conclusions as supplements.
+3. [03_robustness.ipynb](03_robustness.ipynb) shows label-change rates and
+   accuracy across the full TEST set under each transformation.
 
-See **[RESULTS.md](RESULTS.md)** for conclusions, reproducibility and limitations.
-The notebooks run from committed binary caches without training or new inference.
-Open **[visualizations/transformation_explorer.html](visualizations/transformation_explorer.html)**
-for the self-contained, offline interactive visualization; no model server is needed.
+[RESULTS.md](RESULTS.md) summarizes findings and limitations. The notebooks read
+saved binary results without training or new inference. The
+[offline transformation explorer](visualizations/transformation_explorer.html)
+needs no model server.
 
-With Git LFS installed, obtain the active model files if necessary:
+Install Git LFS and fetch the active model files if needed:
 
 ```bash
 git lfs pull --include="models/vit/*,weights_bloodmnist/*"
 python -m venv .venv
 ```
 
-Activate `.venv` (`source .venv/bin/activate` on Linux/macOS or
-`.venv\Scripts\Activate.ps1` in Windows PowerShell), then:
+Activate `.venv` with `source .venv/bin/activate` on Linux or macOS, or
+`.venv\Scripts\Activate.ps1` in Windows PowerShell. Then install the dependencies
+and open JupyterLab:
 
 ```bash
 python -m pip install -r requirements.txt
 jupyter lab
 ```
 
-Select that environment's Python kernel. Use Python 3.10+ with a supported PyTorch
-build; CUDA is optional and is not used by the default cache-only notebook workflow.
-Historical archived checkpoints do not need to be downloaded to read/run the results.
+Select the environment's Python kernel. Use Python 3.10 or later with a supported
+PyTorch build. CUDA is optional, and the default notebook runs do not use it.
+You do not need the archived checkpoints to run the current notebooks.
 
 ## Repository layout
 
@@ -47,50 +50,52 @@ Historical archived checkpoints do not need to be downloaded to read/run the res
 02_model_behavior.ipynb
 03_robustness.ipynb
 RESULTS.md
-visualizations/                 # Active offline transformation explorer only
-predictions/                    # Eight NPZ caches used by the current notebooks
-weights_bloodmnist/              # Only the two current CNN checkpoints
-models/                         # Shared architecture code, local ViT and attribution
+visualizations/                 # Offline transformation explorer
+predictions/                    # Eight NPZ caches for the current notebooks
+weights_bloodmnist/              # Two active CNN checkpoints
+models/                         # Shared model code, local ViT and attribution
 data/                           # Original dataset, class order and licenses
-agent/                          # Agent-only notes; local scripts/logs/backups ignored
+agent/                          # Agent notes and Git-ignored local working files
 archived/
-  analysis_history.ipynb         # All superseded analysis/code/figures; not Run-All
-  legacy_visualization/          # Former singular visualization/ entry point
-  predictions/                   # Historical runs, train/val exports, CSV copies, PCA
-  checkpoints/                   # Unused experiment runs and the original 28px reference
-  workbench/                     # Paused editor/workbench, UI and development notes
-  requirements.txt               # Extra dependencies for archived work only
-  outputs/                       # Local intermediate caches (ignored by Git)
+  analysis_history.ipynb         # Earlier code, plots and interpretations
+  legacy_visualization/          # Former visualization/ entry point
+  predictions/                   # Older runs, train/val exports, CSV copies and PCA
+  checkpoints/                   # Unused runs and the original 28px reference
+  workbench/                     # Paused editor, UI and development notes
+  requirements.txt               # Extra dependencies for archived code
+  outputs/                       # Local intermediate caches, ignored by Git
 ```
 
-`visualization/` was an older exploration with a different ResNet50 result; it was
-not a second supported visualization pipeline. Only the plural `visualizations/`
-folder remains active. Nothing was deleted: see [archived/README.md](archived/README.md)
-for relocated artifacts and the paused workbench's status.
+Only `visualizations/` is active. The old singular `visualization/` folder used a
+different ResNet50 result and is archived. [archived/README.md](archived/README.md)
+explains the moved files and paused workbench. Do not Run All in the historical
+notebook.
 
-## Frozen pipelines and shared assets
+## Models and preprocessing
 
-- ResNet18: `weights_bloodmnist/resnet18_224_1.pth`, nearest-neighbor resize to224.
-- ResNet50: `weights_bloodmnist/resnet50_28_1.pth`, native28, using the upstream
-  `ResNet50` class retained in `models/resnet18/models.py`.
-- ViT: local `models/vit/` weights/configuration and its bilinear224 processor.
+- ResNet18 uses `weights_bloodmnist/resnet18_224_1.pth` and nearest-neighbor
+  resizing to 224 pixels.
+- ResNet50 uses `weights_bloodmnist/resnet50_28_1.pth` at native 28 pixels and the
+  upstream `ResNet50` class in `models/resnet18/models.py`.
+- ViT uses the local weights and configuration in `models/vit/` with bilinear
+  resizing to 224 pixels.
 
-These checkpoints and preprocessing are not interchangeable with historical runs.
-Data, active checkpoints and shared model code stay outside `archived/` because the
-current notebooks and optional replay need them; the archived workbench reuses these
-assets rather than duplicating large files. Its additional dependencies and all
-application-specific source/UI are archived together.
+Do not substitute historical checkpoints or preprocessing when reproducing these
+results. Data, active weights and shared model code remain outside `archived/`
+because the current notebooks and optional replay need them. The archived
+workbench reuses these files. Its own source, UI and extra dependencies are archived.
 
 ## Sources and licenses
 
-- [BloodMNIST / MedMNIST](data/README.md): dataset attribution, official splits,
-  eight labels and CC BY4.0 terms.
-- [MedMNIST experiment architecture](models/resnet18/README.md): upstream Apache-2.0
-  code, historical checkpoint provenance and [weights release](https://zenodo.org/records/7782114).
-- [Local KiViDrag ViT](models/vit/README.md): source model card, Apache-2.0 terms
-  and preprocessing notes.
+- [BloodMNIST and MedMNIST](data/README.md) documents dataset attribution,
+  official splits, the eight labels and CC BY 4.0 terms.
+- [MedMNIST model code](models/resnet18/README.md) documents upstream Apache-2.0
+  code and checkpoint provenance. See the
+  [weights release](https://zenodo.org/records/7782114).
+- [Local KiViDrag ViT](models/vit/README.md) contains the model card,
+  Apache-2.0 terms and preprocessing notes.
 
-Original dataset/model binaries and upstream source/license files are unchanged;
-no single replacement license is imposed on the assets. This is a course research
-and teaching project, **not clinical diagnosis**. Continue collaboration on branches
-such as `HeuVik2` and merge through the project's usual review process.
+The original dataset, model binaries and upstream source and license files are
+unchanged. Each asset retains its own license. This project is for research and
+teaching, not clinical diagnosis. Use branches such as `HeuVik2` and the project's
+usual review process for contributions.

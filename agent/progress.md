@@ -1,6 +1,23 @@
 # Presentation and repository handoff
 
-## Latest presentation delivery
+## Latest interactive presentation variant
+
+- Added `presentation_view_2.ipynb`, keeping every cell/figure from the code-free
+  view and adding the original transformation explorer after the robustness curves.
+- Explorer data and canonical `visualizations/transformation_explorer.html` are
+  unchanged. The new view embeds the full HTML in a scripts-only sandbox. No
+  workbench, model runtime, external assets or new inference is included.
+- Presentation-specific sizing and a Full screen button are added to the embedded
+  copy only. Dropdown, all 80 cases, level selection, linked zoom buttons, wheel,
+  drag, fit, reset and full screen were tested in JupyterLab at 1366x650.
+- Interactive block is 528.36px in the 529px notebook area, without internal
+  scrolling. One source-hidden cell reconstructs the HTML without display warnings.
+- Notebook is signed locally. Other users may need Jupyter's Trust Notebook
+  command once for active HTML; this cannot be embedded as portable trust.
+- Helpers/checks/screenshots: `runs/presentation-view-2/`. All earlier notebooks,
+  figures, caches and datasets remain unchanged. Preview server is stopped.
+
+## Previous presentation delivery
 
 - Added `presentation_view.ipynb`, a Markdown-only screen-sharing copy. Its 15
   cells embed the same seven PNGs as the executable presentation, with no code

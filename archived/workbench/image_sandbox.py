@@ -1,7 +1,8 @@
-"""Run `python image_sandbox.py` and open http://127.0.0.1:8765.
+"""Archived prototype: run `python archived/workbench/image_sandbox.py` from the repo root.
 
-Real checkpoint inference for edited TEST images; no training or public network binding.
-The same engine/preprocessing is used by the targeted controls in archive.ipynb.
+Real checkpoint inference for edited TEST images and bounded hypothesis experiments.
+No training or public network binding. The engine/preprocessing is also used by
+archived targeted controls; hypothesis_workbench.py implements the experiment API.
 """
 from pathlib import Path
 import argparse
@@ -9,7 +10,7 @@ import base64
 import hashlib
 import io
 import json
-import secrets
+import sys
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -20,9 +21,11 @@ from PIL import Image, ImageEnhance, ImageFilter
 import torch
 from torchvision.models import resnet18
 from transformers import ViTForImageClassification, ViTImageProcessor
-from models.resnet18.models import ResNet50
 
-ROOT = Path(__file__).resolve().parent
+APP_ROOT = Path(__file__).resolve().parent
+ROOT = APP_ROOT.parent.parent
+sys.path.insert(0, str(ROOT))
+from models.resnet18.models import ResNet50
 MODEL_NAMES = ['resnet18', 'resnet50', 'vit']
 RESAMPLING = {'nearest': Image.Resampling.NEAREST, 'bilinear': Image.Resampling.BILINEAR,
               'bicubic': Image.Resampling.BICUBIC}
@@ -125,11 +128,9 @@ def serve(port):
     engine = InferenceEngine()
     p, _ = engine.predict(images[:32])
     np.testing.assert_allclose(p, baseline[:, :32], atol=1e-5, rtol=1e-4)
-    predictions = baseline.argmax(-1)
-    hc_wrong = (predictions != labels) & (baseline.max(-1) >= .9)
-    groups = {'all': np.arange(len(labels)), 'errors': np.flatnonzero(hc_wrong.any(0)),
-              'ig_neut': np.flatnonzero((hc_wrong & (((labels == 3) & (predictions == 6)) |
-                                                        ((labels == 6) & (predictions == 3)))).any(0))}
+    np.testing.assert_array_equal(p.argmax(-1), baseline[:, :32].argmax(-1))
+    from hypothesis_workbench import Workbench, BusyError
+    workbench = Workbench(ROOT, images, labels, baseline, classes, engine, transform_image, png_url)
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, format, *args):
@@ -148,7 +149,7 @@ def serve(port):
         def do_GET(self):
             parsed = urlparse(self.path)
             if parsed.path == '/':
-                data = (ROOT / 'visualizations/image_sandbox.html').read_bytes()
+                data = (APP_ROOT / 'index.html').read_bytes()
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html; charset=utf-8')
                 self.send_header('Content-Length', str(len(data)))
@@ -157,22 +158,19 @@ def serve(port):
             elif parsed.path == '/health':
                 self.reply(dict(app='bloodmnist-image-sandbox', ready=True, device=str(engine.device),
                                 test_images=len(images), inference_calls=engine.calls))
+            elif parsed.path == '/api/catalog':
+                self.reply(workbench.catalog())
             elif parsed.path == '/api/image':
-                query = parse_qs(parsed.query)
                 try:
-                    pool = groups[query.get('group', ['all'])[0]]
-                    i = int(query['id'][0]) if 'id' in query else int(pool[secrets.randbelow(len(pool))])
-                    if not 0 <= i < len(images):
-                        raise ValueError('Invalid test index')
-                    self.reply(dict(id=i, label=int(labels[i]), classes=classes, image=png_url(images[i]),
-                                    baseline=baseline[:, i].tolist()))
-                except (ValueError, KeyError, IndexError):
-                    self.reply({'error': 'Unknown group or test index'}, 400)
+                    query = {key: values[0] for key, values in parse_qs(parsed.query).items()}
+                    self.reply(workbench.image(query))
+                except (ValueError, KeyError, IndexError) as exc:
+                    self.reply({'error': str(exc)}, 400)
             else:
                 self.reply({'error': 'Not found'}, 404)
 
         def do_POST(self):
-            if self.path != '/api/predict':
+            if self.path not in ('/api/predict', '/api/experiment'):
                 return self.reply({'error': 'Not found'}, 404)
             if self.headers.get('Origin') not in (None, f'http://127.0.0.1:{port}', f'http://localhost:{port}'):
                 return self.reply({'error': 'Cross-origin requests are not allowed'}, 403)
@@ -181,25 +179,15 @@ def serve(port):
                 if not 0 < length <= 100_000 or self.headers.get_content_type() != 'application/json':
                     raise ValueError('Expected small JSON request')
                 request = json.loads(self.rfile.read(length))
-                im = Image.open(io.BytesIO(base64.b64decode(request['image'].split(',', 1)[-1], validate=True)))
-                if im.size != (28, 28):
-                    raise ValueError('Edited inputs must remain 28×28')
-                image = np.asarray(im.convert('RGB'))
-                kind, level = request.get('kind', 'none'), float(request.get('level', 1))
-                limits = {'none': (0, 1), 'rotation': (-45, 45), 'translation': (-6, 6), 'brightness': (0, 2),
-                          'saturation': (0, 2), 'contrast': (0, 2), 'blur': (0, 3), 'noise': (0, .3),
-                          'red_scale': (0, 2), 'green_scale': (0, 2), 'blue_scale': (0, 2)}
-                if kind not in limits or not np.isfinite(level) or not limits[kind][0] <= level <= limits[kind][1]:
-                    raise ValueError('Transformation outside permitted range')
-                test_id = int(request.get('id', 0))
-                if not 0 <= test_id < len(images):
-                    raise ValueError('Invalid test index')
-                changed = transform_image(image, kind, level, test_id=test_id, seed=int(request.get('seed', 42)))
+                if not isinstance(request, dict):
+                    raise ValueError('Expected a JSON object')
                 started = time.perf_counter()
-                probabilities, _ = engine.predict(changed[None])
-                self.reply(dict(probabilities=probabilities[:, 0].tolist(), image=png_url(changed),
-                                seconds=time.perf_counter() - started, device=str(engine.device)))
-            except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as exc:
+                result = workbench.experiment(request) if self.path == '/api/experiment' else workbench.predict(request)
+                result['seconds'] = time.perf_counter() - started
+                self.reply(result)
+            except BusyError as exc:
+                self.reply({'error': str(exc)}, 409)
+            except (ValueError, KeyError, TypeError, IndexError, OSError, json.JSONDecodeError) as exc:
                 self.reply({'error': str(exc)}, 400)
 
     print(f'Ready: http://127.0.0.1:{port} · {engine.device} · baseline equivalence passed', flush=True)

@@ -1,6 +1,12 @@
-# Official MedMNIST ResNet-18 (28 x 28)
+# Shared upstream architecture code and archived 28px reference
 
-- **Checkpoint:** `resnet18_28_1.pth`, official BloodMNIST run 1, unchanged.
+`models.py` remains here because its `ResNet50` definition is used by the current
+supplied native-28 ResNet50 checkpoint. The active ResNet18 instead uses torchvision
+with `weights_bloodmnist/resnet18_224_1.pth`; do not substitute the older reference below.
+
+## Historical official MedMNIST ResNet-18 (28 x 28)
+
+- **Checkpoint:** [`../../archived/checkpoints/original_medmnist/resnet18_28_1.pth`](../../archived/checkpoints/original_medmnist/resnet18_28_1.pth), official BloodMNIST run 1, unchanged.
 - **Source:** `resnet18_28_1.pth` inside `weights_bloodmnist.zip` from
   [Zenodo record 7782114](https://zenodo.org/records/7782114).
 - **Architecture:** the small-image ResNet-18 from
@@ -21,7 +27,7 @@ from models.resnet18.models import ResNet18
 
 model = ResNet18(in_channels=3, num_classes=8)
 checkpoint = torch.load(
-    "models/resnet18/resnet18_28_1.pth", map_location="cpu", weights_only=True
+    "archived/checkpoints/original_medmnist/resnet18_28_1.pth", map_location="cpu", weights_only=True
 )
 model.load_state_dict(checkpoint["net"], strict=True)
 model.eval()
@@ -45,5 +51,8 @@ Architecture code: MedMNIST Team, Apache-2.0 (full text in `LICENSE`); upstream
 notes that it was adapted from `kuangliu/pytorch-cifar`. This code license does
 not replace the checkpoint's CC BY 4.0 license.
 
-The archive member was extracted using HTTP ranges and its ZIP CRC was checked;
-other models and the full 1.46 GB archive are deliberately not included.
+This reference member was originally extracted using HTTP ranges and its ZIP CRC
+was checked. Additional historical experiment checkpoints are retained under
+`archived/checkpoints/`; only the two current CNN checkpoints remain under
+`weights_bloodmnist/`. The original pre-move documentation is preserved alongside
+the archived reference asset.

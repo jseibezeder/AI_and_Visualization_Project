@@ -1,0 +1,6 @@
+# Archived workbench and historical PCA/matching replay dependencies.
+# The current notebooks and optional checkpoint replay use the shared root dependencies.
+-r ../requirements.txt
+scikit-learn>=1.5,<2
+scipy>=1.11,<2
+threadpoolctl>=3.2,<4

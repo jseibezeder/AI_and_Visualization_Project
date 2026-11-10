@@ -32,6 +32,24 @@ result with the final pipeline. The optional live editor/workbench is not requir
 or used as evidence; its paused source, UI, extra requirements and development notes
 are now under `archived/workbench/` and `archived/requirements.txt`.
 
+## Presentation and supplementary evidence
+
+The main `02_model_behavior.ipynb` narrative ends at its final conclusions
+(54 cells, 12 figures). Its [Supplement A](02_model_behavior.ipynb#supplement-galleries)
+retains all 39 shared-error images and 18 confidence-selected exclusive examples;
+[Supplement B](02_model_behavior.ipynb#supplement-roi) retains the optional balanced
+24-image ROI study, mask checks and unequal-dose limitations. No evidence was removed.
+Confusion heatmaps annotate counts only; reliability includes all ten confidence-bin
+counts and marks bins with fewer than 30 images as low-support display points.
+That cutoff is descriptive, not a statistical significance criterion; ECE is unchanged.
+
+Historical context is kept here and in the archive rather than interrupting the
+main narrative: the earlier approximately 10-percentage-point extra central-occlusion
+contrast used broader matches. Under the reported confidence-caliper matches, the
+contrasts are +1.4/−1.2/+3.3 points, with every 95% interval including zero.
+The complete notebook preceding these presentation edits is also preserved in
+`archived/analysis_history.ipynb`.
+
 ## What the evidence supports
 
 | Pipeline | TEST accuracy | HC errors (confidence ≥90%) | Main distinction |

@@ -12,6 +12,7 @@ Run these notebooks from the repository root, in order:
    labels, logits and frozen checkpoint hashes; optional checkpoint replay is disabled.
 2. **[02_model_behavior.ipynb](02_model_behavior.ipynb)** — disagreement, confidence,
    input sensitivity, matched error properties and the focused IG/neutrophil investigation.
+   Complete error galleries and the optional ROI study follow the conclusions as supplements.
 3. **[03_robustness.ipynb](03_robustness.ipynb)** — the two full-test transformation
    grids: label changes and accuracy.
 

@@ -1,6 +1,24 @@
 # Presentation and repository handoff
 
-## Latest all-error class summary
+## Latest presentation
+
+- Created `presentation.ipynb` for the BloodMNIST Phase I midpoint presentation.
+  It has 15 cells, six main scientific figures, a compact opening image strip
+  and three final findings. No timing annotations, notes or scripts are visible.
+- All images are embedded PNG outputs. Code uses native source-hidden metadata
+  and blank first lines so collapsed inputs do not expose code previews.
+- Clean-kernel execution passed without inference. Cached values and both
+  directions' appearance bootstrap means/intervals exactly match the original
+  analysis calculations. No original notebook, dataset, checkpoint or cache changed.
+- Inspected all eight blocks in JupyterLab at a 1366x650 viewport. The notebook
+  area is 529px high; the largest section is 499.3px. No visible code or clipped
+  images. Native collapsed-input ellipses remain as normal notebook controls.
+- Estimated speaking duration is 2:45 without the opening strip, 2:55 with it.
+  Modern JupyterLab is verified; older Classic Notebook may ignore source hiding.
+- Detailed checks, screenshots, helpers and source hashes are in
+  `runs/presentation/`. Preview server is shut down after inspection.
+
+## Previous all-error class summary
 
 - Added per-class recall and HC/all-error counts to `02_model_behavior.ipynb`
   before the HC-only analysis. All 3,421 TEST predictions contribute; the total

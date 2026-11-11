@@ -18,7 +18,7 @@ Both models share the official class order. Their preprocessing differs.
 
 ## Collaboration
 
-The initial assets are set up directly on `main`. The AI assisted group did their work in the `HeuVik` branch, the AI-unassisted team in `TheJak` branch. The results of the no-Gen-AI team are located in the [Visualization file](visualization/visuals.ipynb) on the `TheJak` branch.
+The initial assets are set up directly on `main`. The AI assisted group did their work in the `HeuVik2` branch, the AI-unassisted team in `TheJak` branch. The results of the no-Gen-AI team are located in the [Visualization file](visualization/visuals.ipynb) on the `TheJak` branch.
 
 ## Sources and licenses
 

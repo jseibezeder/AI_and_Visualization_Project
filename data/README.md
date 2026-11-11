@@ -1,5 +1,8 @@
 # BloodMNIST
 
+The BloodMNIST is based on a dataset of individual normal cells, captured from individuals without infection, hematologic
+or oncologic disease and free of any pharmacologic treatment at the moment of blood collection. \[from [original paper](https://www.nature.com/articles/s41597-022-01721-8)\]
+
 `bloodmnist.npz` is the **unmodified original 28 x 28 RGB** BloodMNIST archive
 from [MedMNIST's Zenodo release](https://zenodo.org/records/10519652). It contains
 17,092 images across eight blood-cell classes and is 35,461,855 bytes (~33.8 MiB),

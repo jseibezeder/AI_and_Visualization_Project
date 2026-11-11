@@ -28,29 +28,3 @@ model selection and reserve test data for final evaluation.
 
 The exact upstream names, counts, and source checksum are in `metadata.json`.
 The supplied CNN and ViT use this same label order.
-
-```python
-import numpy as np
-
-with np.load("data/bloodmnist.npz", allow_pickle=False) as dataset:
-    images = dataset["train_images"]  # Decompress each array once, not per sample.
-    labels = dataset["train_labels"].reshape(-1)
-```
-
-Upstream MD5: `7053d0359d879ad8a5505303e11de1dc`.
-SHA-256 and source URLs are recorded in [`../assets.json`](../assets.json).
-
-## Attribution and license
-
-BloodMNIST is distributed by the MedMNIST team under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see `LICENSE`.
-Credit Jiancheng Yang, Rui Shi, Donglai Wei, Zequan Liu, Lin Zhao, Bilian Ke,
-Hanspeter Pfister, and Bingbing Ni. The archive is redistributed unchanged.
-
-- [MedMNIST repository](https://github.com/MedMNIST/MedMNIST)
-- [Dataset release, DOI: 10.5281/zenodo.10519652](https://doi.org/10.5281/zenodo.10519652)
-- Yang et al., *MedMNIST v2 - A large-scale lightweight benchmark for 2D and 3D
-  biomedical image classification*, Scientific Data (2023),
-  [DOI: 10.1038/s41597-022-01721-8](https://doi.org/10.1038/s41597-022-01721-8).
-
-This is a research/teaching benchmark, not a clinical diagnostic dataset or tool.

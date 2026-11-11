@@ -1,0 +1,37 @@
+# Documentation of AI use
+
+After agreeing on the dataset and model we tackled the task by opening a brain storming session with ChatGPT-6 on high reasoning level. We let the LLM generate ideas on what to explore in the given black box setting. We prompted the model as follows:
+
+"we have the task to investigate a models behavior on the blood mnist bloodcells dataset. we are not allowed to look into the model just to use input and output. the models are a resnet and a vit. what are methods to visualize/explore model behavior. we should not just report performance metric etc. we are allowed to look at training validation and test data"
+
+The model suggested eight black box investigation methods to choose from. We (the GenAI team for phase 1) discussed the potential findings of the proposed experiments, and selected and refined a subset of the proposed visualization methods. We used an iterative refinement approach, pointing out weaknesses in the proposed experiment and letting ChatGPT propose potential solutions.
+
+Of the eight proposed methods we ended up implementing five quite extensively: model disagreement analysis, perturbation experiments, occlusion sensitivity, confidence exploration and class-specific behavioral analysis. Counterfactual analysis and background/color dependence were only investigated to a limited extent, while the proposed decision consistency maps were largely covered by our perturbation experiments. We did not see much value in implementing a separate visualization for this, as it would have mostly shown the same information in a different way. We therefore did not try to implement every proposed method, but rather focused on the experiments we considered useful.
+
+This brainstorming session inside the ChatGPT Web-Interface gave us a general direction in which we wanted our investigation to go. Additionally, we decided to investigate model calibration, which was not in the proposed investigations of the LLM, but motivated by the Bachelor Thesis of one member of our team.
+
+One suggested but not included investigation consisted of trying to fit a surrogate model to map the decision boundaries of the models into PCA space. While the resulting plots looked really enticing, the surrogate model only had mediocre accuracy. To not include unsupported visualizations/depictions of the models we decided to exclude this experiment.
+
+The use of Agentic coding allowed for fast development and prototyping of visualization ideas, revealing which of the models proposed experiments resulted in interesting findings and which were a waste of time. In our experience, while proposing interesting ideas, especially for more complicated plots the models struggle in finding a easy and intuitive way of representing the data accumulated by experiments.
+
+The development speed enabled by the agents led to the phase 1 being focused on breadth for a substantial fraction of the time spent on the assignment, before deciding to dive deeper on the confidence analysis. Interestingly, the topic chosen by us was not proposed by the model, however, in true LLM fashion the model enthusiastically suggested several helpful experiments for the chosen direction.
+
+The first attempts of using the coding agent resulted in quite unclear to follow analysis notebooks, thus we developed a meta prompting workflow of trying to specify the exact analysis we want together with ChatGPT in the Web-interface before letting the LLM generate a prompt for the coding agent. This workflow resulted in more aligned and easier to follow experiments and visualizations
+
+We also tried to let ChatGPT decide which analyses should remain in the final notebook, for example with the prompt:
+
+"can you check the heuvik2 is there some analysis missing is there something unnecessary in the analysis"
+
+This did not work particularly well, as the model tended to suggest further investigations rather than making a clear decision on which existing visualizations were actually useful and which were redundant.
+
+An example of the meta prompting workflow we developed was:
+
+"you should not create a full ipynb but give a extensive and detailed structure explanation i can give my agent so he creates it"
+
+This allowed us to discuss the intended structure with ChatGPT before passing the resulting instructions to a coding agent.
+
+Because both of us are not well versed in the medical domain, we relied on ChatGPT to try to achieve an acceptable understanding of the given dataset. A prompt roughly written as: "Explain the most important background knowledge needed to work on the Bloodmnist visualization task" was used to get a broad overview with specific questions about unclear detailed asked as follow up.
+
+We observed that the AI-assisted analysis results in a lot of hard to read and interpret plots, and the AI's do not have a sense of whether visualization generally contribute something new to a analysis or whether they just package the same data in 5 different ways.
+
+From this experiment, it that AI and Coding Agents can be used especially for fast prototyping, while the final decision of what experiment and visualization is worthwhile keeping can, at the current moment in time, not be delegated to GenAI if insightful results are wished for.
